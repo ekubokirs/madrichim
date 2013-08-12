@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'mongo_mapper', github: 'jnunemaker/mongomapper'
 gem 'bson_ext'
 
-gem 'compass-rails'
+gem 'compass-rails', github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
 gem 'zurb-foundation'
 
 group :doc do

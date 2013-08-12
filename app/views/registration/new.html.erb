@@ -1,0 +1,98 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-6 large-offset-4 columns">
+			<button id="ma_type_button" class="large button">Click Here for Teacher</button>
+		</div>
+	</div>
+  <div id="ma_teen_reg_form">
+  	<h1 class="ma_greet">Welcome <%= @registrant.email %> </h1>
+  	<%= form_for @teen, url: {action: "create"} do |f| %>
+			<div class="row">
+				<p class="large-6 columns">
+					<%= f.label :first_name %>
+					<%= f.text_field :first_name %>
+				</p>
+				<p class="large-6 columns">
+					<%= f.label :last_name %>
+					<%= f.text_field :last_name %>
+				</p>
+			</div>
+			<div class="row">
+				<p class="large-6 columns">
+					<%= f.label :password %>
+					<%= f.password_field :password %>
+					<%= f.label :password_confirmation %>
+					<%= f.password_field :password_confirmation %>
+				</p>
+				<p class="large-6 columns">
+					<!-- password strength meter -->
+				</p>
+			</div>
+			<div class="row">
+       <p class="large-6 columns">
+	        <%= f.label :home_phone %>
+	        <%= f.telephone_field :home_phone %>
+	      </p>
+	       <p class="large-6 columns">
+	        <%= f.label :cell_phone %>
+	        <%= f.telephone_field :cell_phone %>
+	      </p>
+	      <p class="large-6 columns">
+	        <%= f.label :birthday %>
+	        <%= f.date_field :born_on %>
+	      </p>
+	      <p class="large-6 columns">
+	        <%= f.label :size, "T-Shirt Size" %>
+	        <%= f.select :size, options_for_select([
+	          ["Youth Large",               "YL"],
+	          ["Adult Small",               "AS"],
+	          ["Adult Medium",              "AM"],
+	          ["Adult Large",               "AL"],
+	          ["Adult Extra Large",         "AXL"],
+	          ["Adult Extra Extra Large",   "AXXL"]]) %>
+	      </p>
+			</div>
+			<div class="row">
+				<p>
+					<%= f.submit "Submit Madrich/a", :class => "small button" %>
+				</p>
+			</div>
+  	<% end %>
+  </div>
+  <div id="ma_teacher_reg_form">
+  	<h1 class="ma_greet">Welcome <%= @registrant.email %> </h1>
+  	<%= form_for @teacher, url: {action: "create"} do |f| %>
+	  	<div class="row">
+				<p class="large-6 columns">
+					<%= f.label :first_name %>
+					<%= f.text_field :first_name %>
+				</p>
+				<p class="large-6 columns">
+					<%= f.label :last_name %>
+					<%= f.text_field :last_name %>
+				</p>
+			</div>
+			<div class="row">
+				<p class="large-6 columns">
+					<%= f.label :password %>
+					<%= f.password_field :password %>
+					<%= f.label :password_confirmation %>
+					<%= f.password_field :password_confirmation %>
+				</p>
+				<p class="large-6 columns">
+					<!-- password strength meter -->
+				</p>
+			</div>
+			<div class="row">
+				<p>
+					<%= f.submit :class => "small button" %>
+				</p>
+			</div>
+		<% end %>
+	</div>
+</div>
