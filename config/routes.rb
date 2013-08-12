@@ -1,5 +1,7 @@
 Madrichim::Application.routes.draw do
 
+  resources :incidents
+
   # Registration
   get  'register/:code' => "registration#new", as: :register
   post 'register/:code' => "registration#create"

@@ -1,0 +1,31 @@
+<div class="row">
+	<nav class="top-bar">
+		<ul class="title-area">
+			<li class="name">
+			</li>
+		</ul>
+		<section class="top-bar-section">
+			<ul class="right">
+				<li>
+					<%= link_to "Incident Report", new_incident_url %>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<%= link_to "Interview Form", new_admin_interview_form_url %>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<%= link_to "Log Out", logout_url %>
+				</li>
+			</ul>
+		</section>
+	</nav>
+</div>
+<div class="row ma_flashalert">
+	<%= flash.notice %>
+</div>
+<div class="row">
+	<div class="large-4 large-offset-4 columns heb ma_greet">
+		שלום!
+	</div>
+</div>

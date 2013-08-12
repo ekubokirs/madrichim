@@ -1,0 +1,25 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<%= form_for @incident, url: {action: "create"} do |f| %>
+		<div class="row">
+			<%= f.label :reporter %>
+			<%= f.select :reporter, options_for_select %>
+		</div>
+		<div class="row">
+			<div class="ma_par">
+				<%= f.label :participant %>
+				<%= f.select :participant, options_for_select %>
+			</div>
+			<span><a href="#" class="ma_paradd"> Add Participants </a></span> 
+		</div>
+		<div class="row">
+			<%= f.label :report, "Please Describe the Incident" %>
+			<%= f.text_area :report %>
+		</div>
+
+	<% end %>
+</div>

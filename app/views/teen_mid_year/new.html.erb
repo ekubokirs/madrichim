@@ -1,0 +1,76 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<%= form_for :teen_mid_year_form, url: {action: "create"} do |f| %>
+		<div class="row">
+			<!-- teen name -->
+			<div class="large-6 columns">
+				<%= f.label :placement, "Assignment" %>
+				<%= f.select :placement, options_for_select([
+					["Kindergarten",	"K"],
+					["First Grade",		"1"],
+					["Second Grade",	"2"],
+					["Third Grade",		"3"],
+					["Fourth Grade",	"4"],
+					["Fifth Grade", 	"5"],
+					["Cooking", 			"Cook"],
+					["Sports",				"Sport"],
+					["Art",						"Art"],
+					["Drama",					"Drama"],
+					["Music",					"Music"],
+					["Office",				"Office"]]) %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<span>
+					Please rank yourself in the following areas:
+				</span>
+				<%= f.label :aid, "Overall Classroom aid:" %>
+				<%= f.select :aid, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+				<%= f.label :initiative, "Taking inititive:" %>
+				<%= f.select :initiative, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+				<%= f.label :behave, "Helping manage classroom behavior:" %>
+				<%= f.select :behave, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+				<%= f.label :reliable, "Relability:" %>
+				<%= f.select :reliable, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+				<%= f.label :srelation, "Relationship with Students:" %>
+				<%= f.select :srelation, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.label :overall_performace, "Please expand on your overall performance this semester including how you feel about your current placement." %>
+			<%= f.text_area :overall_performace %>
+		</div>
+		<div class="row">
+				<%= f.label :other_teens, "Please comment on the performace of any other madrichim." %>
+			<%= f.text_area :other_teens %>
+		</div>
+		<div class="row">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>

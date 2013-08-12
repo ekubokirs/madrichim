@@ -19,7 +19,7 @@ class SessionController < ApplicationController
 					flash[:alert] = "Password Reset E-mail Sent!"
 				else
 					if @user.authenticate(params[:password])
-						session[:user_id] = @user.user
+						session[:user_id] = @user._id
 						redirect_to root_url
 					else
 						flash[:alert] = "Wrong E-mail or Password.  Please Try Again!"
@@ -27,8 +27,6 @@ class SessionController < ApplicationController
 				end
 			else
 				@registrant = Registrant.new(email: params[:email])
-				@registrant.code = SecureRandom.urlsafe_base64
-				@registrant.expires_at = Time.now + 4.hours
 				@registrant.save
 
 				PasswordMailer.registration_email(@registrant).deliver
