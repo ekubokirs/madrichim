@@ -3,12 +3,12 @@ class SiteController < ApplicationController
 	
 	def index
 		@user = current_user
-		@dashboard = if @user._type = "Teen"
-			"teen_dashboard"
-		elsif @user._type = "Teacher"
-			"teacher_dashboard"
-		elsif @user._type = "Admin"
-			"admin_dashboard"
+		@dashboard = if is_teen?
+			then "teen_dashboard"
+		elsif is_teacher?
+			 then "teacher_dashboard"
+		elsif is_admin?
+			then "admin_dashboard"
 		else
 			redirect_to login_url
 			flash[:alert] = "You Lie!  Try Again!"

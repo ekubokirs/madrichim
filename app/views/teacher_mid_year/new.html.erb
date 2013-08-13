@@ -5,6 +5,7 @@
 		</div>
 	</div>
 	<%= form_for :teacher_mid_year_form, url: {action: "create"} do |f| %>
+		<h2> Submitting form as: <%= @user.first_name %> <%= @user.last_name %> </h2>
 		<div class="row">
 			<!-- teen name -->
 			<div class="large-6 columns">
@@ -70,7 +71,8 @@
 			<%= f.text_area :other_teens %>
 		</div>
 		<div class="row">
-			<%= f.submit %>
+			<%= f.submit :class => "button" %>
+			<%= link_to "Cancel", root_url, :class => "button" %>
 		</div>
 	<% end %>
 </div>

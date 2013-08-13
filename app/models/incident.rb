@@ -4,4 +4,6 @@ class Incident
   key :reporter,		String
   key :particpants,	String
   key	:report,			Text
+
+  timestamps!
 end

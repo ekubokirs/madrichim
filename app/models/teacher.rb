@@ -1,3 +1,4 @@
 class Teacher < User
-  include MongoMapper::Document
+
+  many :teacher_mid_years
 end

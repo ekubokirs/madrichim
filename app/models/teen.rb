@@ -1,5 +1,6 @@
 class Teen < User
-  include MongoMapper::Document
+
+  many :teen_mid_year
 
 	key :born_on,			Date
 	key :zipcode,			Integer

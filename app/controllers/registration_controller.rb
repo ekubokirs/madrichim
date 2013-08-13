@@ -17,6 +17,8 @@ class RegistrationController < ApplicationController
 			redirect_to login_url
 			flash[:alert] = "You must be a Teacher or a Madrich/a!"
 		end
+		
+		@user.email = @registrant.email
 
 		if @user.save
 			@registrant.destroy
