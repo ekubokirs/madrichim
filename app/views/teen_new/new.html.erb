@@ -22,11 +22,11 @@
 		</div>
 		<div class="row">
 			<div class="large-6 columns">
-				<%= f.label :school %>
+				<%= f.label :school, "School in the Fall" %>
 				<%= f.text_field :school %>
 			</div>
 			<div class="large-6 columns">
-				<%= f.label :grade %>
+				<%= f.label :grade, "Grade in the Fall" %>
 				<%= f.select :grade, options_for_select([
 					["Seventh Grade",		"7"],
 					["Eighth Grade", 		"8"],
@@ -54,7 +54,31 @@
 			<%= f.text_area :act %>
 		</div>
 		<div class="row">
+			<%= f.label :days %>
+			<div class="large-4 columns">
+				<%= check_box(:days, "Sunday") %>
+				Sunday
+			</div>
+			<div class="large-4 columns">
+				<%= check_box(f, "Tuesday") %>
+				Tuesday
+			</div>
+			<div class="large-4 columns">
+				<%= f.check_box(:days, :wednesday) %>
+				<%= f.label(:days, "Wednesday") %>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.label :assign %>
+		</div>
+		<div class="row">
+			<%= f.label :youth %>
+		</div>
+		<div class="row">
 			By submitting this application, I affirm that the facts set forth in it are true and complete. I understand that if I am accepted as a Madrich/a, any false statements, omissions, and other misrepresentations made by me on this application may result in my immediate dismissal.
+		</div>
+		<div class="row">
+			<%= f.submit "Submit", :class => "button" %>
 		</div>
 	<% end %>
 </div>

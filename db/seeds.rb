@@ -8,7 +8,7 @@
 Admin.destroy_all
 
 Admin.create([
-	{email:'emilia@ctjmb.org', password: 'abc', password_confirmation: 'abc'},
-	{email:'assistant@ctjmb.org', password: 'abc', password_confirmation: 'abc'},
-	{email:'rabbi.carrie@ctjmb.org', password: 'abc', password_confirmation: 'abc'}
+	{email:'emilia@ctjmb.org', password: 'abc', password_confirmation: 'abc', first_name:"Emilia", last_name:"Kubo Kirschenbaum"},
+	{email:'assistant@ctjmb.org', password: 'abc', password_confirmation: 'abc', first_name: "Amir", last_name: "Orbach"},
+	{email:'rabbi.carrie@ctjmb.org', password: 'abc', password_confirmation: 'abc', first_name:"Carrie", last_name:"Benveniste"}
 ])

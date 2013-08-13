@@ -6,9 +6,10 @@
 		</ul>
 		<section class="top-bar-section">
 			<ul class="left">
-				<li><%= @user.first_name %> </li>
+				<li class="ma_username"><%= @user.first_name %> </li>
 				<li class="divider"></li>
-				<li><%= @user._type %> </li>
+				<li class="ma_usertype"><%= @user._type %> </li>
+				<li class="divider"></li>
 			</ul>
 			<ul class="right">
 				<li>
@@ -24,7 +25,6 @@
 						<li>
 							<%= link_to "End of Year Form", new_teacher_end_year_url %>
 						</li>
-						<li class="divider"></li>
 					</ul>
 				</li>
 				<li class="divider"></li>

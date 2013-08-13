@@ -1,11 +1,11 @@
 class User
   include MongoMapper::Document
 
-  key :first_name,  String
-  key :last_name,   String
-  key :email,       String
-  key :salt,        String
-  key :fish,        String
+  key :first_name,  String, :required =>  true
+  key :last_name,   String, :required =>  true
+  key :email,       String, :unique =>    true
+  key :salt,        String, :required =>  true
+  key :fish,        String, :required =>  true
   key :code,        String
   key :expires_at,  Time
 

@@ -8,6 +8,7 @@ Madrichim::Application.routes.draw do
   resources :teen_term
   resources :admin_interview
   resources :teacher_end_year
+  resources :teen_new
 
   # Registration
   get  'register/:code' => "registration#new", as: :register

@@ -1,0 +1,2 @@
+class TeenEndYeadController < ApplicationController
+end

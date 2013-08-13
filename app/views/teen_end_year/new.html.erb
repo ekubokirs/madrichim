@@ -1,0 +1,65 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<%= form_for :teen_end_year, url: {action: "create"} do |f| %>
+		<div class="row">
+			<h2>Submitting form as: <%= @user.first_name %> <%= @user.last_name %></h2>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<%= f.label :school, "School in the Fall" %>
+				<%= f.text_field :school %>
+			</div>
+			<div class="large-6 columns">
+				<%= f.label :grade, "Grade in the Fall" %>
+				<%= f.select :grade, options_for_select([
+					["Seventh Grade",		"7"],
+					["Eighth Grade", 		"8"],
+					["Freshman",				"9"],
+					["Sophomore",				"10"],
+					["Junior",					"11"],
+					["Senior",					"12"]
+					])%>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<%= f.label :size, "T-Shirt Size" %>
+				<%= f.select :size, options_for_select([
+				  ["Youth Large",               "YL"],
+				  ["Adult Small",               "AS"],
+				  ["Adult Medium",              "AM"],
+				  ["Adult Large",               "AL"],
+				  ["Adult Extra Large",         "AXL"],
+				  ["Adult Extra Extra Large",   "AXXL"]]) %>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.label :change, "What would you change about this year? For the program? For yourself?" %>
+			<%= f.text_area :change %>
+		</div>
+		<div class="row">
+			<%= f.label :same, "What would you keep the same? For the program? For yourself?" %>
+			<%= f.text_area :same %>
+		</div>
+		<div class="row">
+			<%= f.label :grow, "What do you think you learned/How do you think you grew this year?" %>
+			<%= f.text_area :grow %>
+		</div>
+		<div class="row">
+			<%= f.label :days %>
+			<%= f.check_box :sunday %>
+			<%= f.check_box :tuesday %>
+			<%= f.check_box :wednesday %>
+		</div>
+		<div class="row">
+			<%= f.label :assign %>
+		</div>
+		<div class="row">
+			<%= f.label :youth %>
+		</div>
+	<% end %>
+</div>
