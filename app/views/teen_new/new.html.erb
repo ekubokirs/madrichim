@@ -1,0 +1,60 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<%= form_for :teen_new, url: {action: "create"} do |f| %>
+		<div class="row">
+			<h2>Submitting Form As: <%= @user.first_name %> <%= @user.last_name %> </h2>
+		</div>
+		<div class="row">
+		  <div class="large-6 columns">
+				<%= f.label :size, "T-Shirt Size" %>
+				<%= f.select :size, options_for_select([
+				  ["Youth Large",               "YL"],
+				  ["Adult Small",               "AS"],
+				  ["Adult Medium",              "AM"],
+				  ["Adult Large",               "AL"],
+				  ["Adult Extra Large",         "AXL"],
+				  ["Adult Extra Extra Large",   "AXXL"]]) %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<%= f.label :school %>
+				<%= f.text_field :school %>
+			</div>
+			<div class="large-6 columns">
+				<%= f.label :grade %>
+				<%= f.select :grade, options_for_select([
+					["Seventh Grade",		"7"],
+					["Eighth Grade", 		"8"],
+					["Freshman",				"9"],
+					["Sophomore",				"10"],
+					["Junior",					"11"],
+					["Senior",					"12"]
+					])%>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.label :join, "Why would you like to join the madrichim program?" %>
+			<%= f.text_area :join %>
+		</div>
+		<div class="row">
+			<%= f.label :goal, "How do you hope to grow as a member of the madrichim program?" %>
+			<%= f.text_area :goal %>
+		</div>
+		<div class="row">
+			<%= f.label :jact, "What Jewish activites are you involved in?" %>
+			<%= f.text_area :jact %>
+		</div>
+		<div class="row">
+			<%= f.label :act, "What activities are you involved in outside of CTJ?" %>
+			<%= f.text_area :act %>
+		</div>
+		<div class="row">
+			By submitting this application, I affirm that the facts set forth in it are true and complete. I understand that if I am accepted as a Madrich/a, any false statements, omissions, and other misrepresentations made by me on this application may result in my immediate dismissal.
+		</div>
+	<% end %>
+</div>

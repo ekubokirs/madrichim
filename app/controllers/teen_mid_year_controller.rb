@@ -1,6 +1,6 @@
 class TeenMidYearController < ApplicationController
 	def new
-		@user = User.find_by_email params[:email]
+		@user = current_user
 		@teenMidYear = TeenMidYear.new
 	end
 

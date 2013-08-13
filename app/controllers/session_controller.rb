@@ -4,11 +4,6 @@ class SessionController < ApplicationController
 
 	def create
 		@user = User.find_by_email params[:email]
-		puts ">>>>>>>>>>"
-		puts @user
-		puts "---"
-		puts User.all
-		puts "<<<<<<<<<<"
 		if params[:email].blank?
 			flash[:alert] = "Please Enter E-mail"
 			render :new
