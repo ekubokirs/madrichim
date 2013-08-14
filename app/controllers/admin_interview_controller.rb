@@ -1,5 +1,4 @@
-class AdminInterview
-	Controller < ApplicationController
+class AdminInterviewController < ApplicationController
 
 	def new
 		@user = current_user

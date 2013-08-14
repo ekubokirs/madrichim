@@ -1,15 +1,16 @@
 Madrichim::Application.routes.draw do
 
   resources :incidents
-  resources :teen_mid_year
-  resources :teacher_mid_year
-  resources :teen_end_year
-  resources :teen_end_year
-  resources :teen_term
   resources :admin_interview
+  resources :teacher_mid_year
   resources :teacher_end_year
-  resources :teen_new
-
+  
+  resources :teen do
+    resources :teen_new
+    resources :teen_mid_year
+    resources :teen_end_year
+    resources :teen_term
+  end
   # Registration
   get  'register/:code' => "registration#new", as: :register
   post 'register/:code' => "registration#create"
