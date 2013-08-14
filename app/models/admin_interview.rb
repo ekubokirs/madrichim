@@ -17,6 +17,5 @@ class AdminInterview
   key :other, String
 
   timestamps!
-  userstamps!
 
 end

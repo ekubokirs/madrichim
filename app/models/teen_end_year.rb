@@ -13,6 +13,4 @@ class TeenEndYear
 	key :youth,		String
 	key	:assign,	String
 
-	userstamps!
-	
 end

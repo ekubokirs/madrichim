@@ -27,6 +27,7 @@ class TeenNewController < ApplicationController
 			:days,
 			:youth,
 			:assign,
+			:request
 		)
 	end
 end

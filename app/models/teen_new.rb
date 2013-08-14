@@ -13,7 +13,7 @@ class TeenNew
 	key :days,		Array
 	key :youth,		String
 	key	:assign,	Array
+	key	:request,	String
 
 	timestamps!
-	userstamps!
 end

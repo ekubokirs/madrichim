@@ -57,23 +57,45 @@
 			<%= f.label :days %>
 			<div class="large-4 columns">
 				<%= f.check_box(:days, {}, "Sunday", "") %>
-				Sunday
+				<span class="ma_day">Sunday</span>
 			</div>
 			<div class="large-4 columns">
 				<%= f.check_box(:days,{}, "Tuesday","") %>
-				Tuesday
+				<span class="ma_day">Tuesday</span>
 			</div>
 			<div class="large-4 columns">
-				<%= f.check_box(:days, {}, "Wednesday", "") %>Wednesday
+				<%= f.check_box(:days, {}, "Wednesday", "") %>
+				<span class="ma_day">Wednesday</span>
 			</div>
 		</div>
 		<div class="row">
-			<%= f.label :assign %>
+			<div class="row">
+				<%= f.label :assign, "Request for Assignment" %>
+				<div class="large-4 columns">
+					<%= f.check_box(:assign, {}, "Classroom", "") %>
+					<span class="ma_assign">Classroom</span>
+				</div>
+				<div class="large-4 columns">
+					<%= f.check_box(:assign, {}, "Chug", "") %>
+					<span class="ma_assign">Chug</span>
+				</div>
+				<div class="large-4 columns">
+					<%= f.check_box(:assign, {}, "Office", "") %>
+					<span class="ma_assign">Office</span>
+				</div>
+			</div>
+			<div class="row">
+				<%= f.text_field :request %>
+			</div>
 		</div>
 		<div class="row">
-			<%= f.label :youth %>
+			<%= f.label :youth, "Would you like to staff youth events?" %>
+			<%= f.radio_button(:youth, "Yes") %>
+			<span>Yes</span>
+			<%= f.radio_button(:youth, "No") %>
+			<span>No</span>
 		</div>
-		<div class="row">
+		<div class="row ma_truth">
 			By submitting this application, I affirm that the facts set forth in it are true and complete. I understand that if I am accepted as a Madrich/a, any false statements, omissions, and other misrepresentations made by me on this application may result in my immediate dismissal.
 		</div>
 		<div class="row">
