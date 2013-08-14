@@ -6,4 +6,5 @@ class Incident
   key	:report,			Text
 
   timestamps!
+  userstamps!
 end

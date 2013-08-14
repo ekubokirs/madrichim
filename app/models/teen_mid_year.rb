@@ -13,4 +13,6 @@ class TeenMidYear
 	key :other_teens,					String
 
 	timestamps!
+	userstamps!
+	
 end

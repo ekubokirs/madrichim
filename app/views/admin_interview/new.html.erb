@@ -1,0 +1,64 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<%= form_for :admin_interview, url: {action: "create"} do |f| %>
+		<div class="row">
+			<%= f.label %>
+			<%= f. select %>
+		</div>
+		<div class="row">
+			<%= f.label :self, "Tell us about yourself." %>
+			<%= f.text_area :self %>
+		</div>
+		<div class="row">
+			<%= f.label :children, "What experience do you have working with children?" %>
+			<%= f.text_area :children %>
+		</div>
+		<div class="row">
+			<%= f.label :strength, "What are three of your strengths?" %>
+			<%= f.text_area :strength %>
+		</div>
+		<div class="row">
+			<%= f.label :weak, "What are three of your weaknesses?" %>
+			<%= f.text_area :weak %>
+		</div>
+		<div class="row">
+			<%= f.label :challenges, "What do you think will challenge you most about this program?" %>
+			<%= f.text_area :challenges %>
+		</div>
+		<div class="row">
+			<%= f.label :groups, "What age group do you think you will be most comfortable working with?" %>
+			<%= f.text_area :groups %>
+		</div>
+		<div class="row">
+			<%= f.label :talent, "Do you have any other talents such as art or drama?" %>
+			<%= f.text_area :talent %>
+		</div>
+		<div class="row">
+			<%= f.label :question, "What would you do if someone asked you a question you didn't know the answer to?" %>
+			<%= f.text_area :question %>
+		</div>
+		<div class="row">
+			<%= f.label :crying, "What would you do if you saw a child crying in the parking lot?" %>
+			<%= f.text_area :crying %>
+		</div>
+		<div class="row">
+			<%= f.label :tefillah, "What would you do if a child was acting up during Tefillah?" %>
+			<%= f.text_area :tefillah %>
+		</div>
+		<div class="row">
+			<%= f.label :madrich, "Is there another Madrich/a that you think sets a good example?" %>
+			<%= f.text_area :madrich %>
+		</div>
+		<div class="row">
+			<%= f.label :other, "Is there anything else you think we should know?" %>
+			<%= f.text_area :other %>
+		</div>
+		<div class="row">
+			<%= f.submit "Submit", :class => "button" %>
+		</div>
+	<% end %>
+</div>

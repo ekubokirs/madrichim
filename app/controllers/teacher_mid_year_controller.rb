@@ -2,6 +2,7 @@ class TeacherMidYearController < ApplicationController
 	def new
 		@user = current_user
 		@teacherMY = TeacherMidYear.new
+		@teens = User.find_by_type("Teen").all
 	end
 
 	def create
@@ -17,6 +18,7 @@ class TeacherMidYearController < ApplicationController
 
 	def mid_year_params
 		params.require(:teacher_mid_year).permit(
+			:teen,
 			:placement,
 			:aid,
 			:initiative,

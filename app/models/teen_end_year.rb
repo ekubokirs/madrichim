@@ -1,4 +1,4 @@
-class TeenNew
+class TeenEndYear
 	include MongoMapper::Document
 
 	belongs_to :teen
@@ -12,4 +12,7 @@ class TeenNew
 	key :days,		String
 	key :youth,		String
 	key	:assign,	String
+
+	userstamps!
+	
 end

@@ -6,7 +6,7 @@ class TeenNewController < ApplicationController
 
 	def create
 		@teen_new = TeenNew.new new_params
-		@teen_new._id = current_user._id
+		@teen_new.teen = current_user
 		@teen_new.save
 
 		redirect_to root_url
@@ -16,8 +16,6 @@ class TeenNewController < ApplicationController
 	private
 
 	def new_params
-		puts "*"*50
-		puts params[:teen_new]
 		params.require(:teen_new).permit(
 			:size,
 			:school,
@@ -29,7 +27,6 @@ class TeenNewController < ApplicationController
 			:days,
 			:youth,
 			:assign,
-
 		)
 	end
 end

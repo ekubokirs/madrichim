@@ -7,7 +7,10 @@
 	<%= form_for :teacher_mid_year, url: {action: "create"} do |f| %>
 		<h2> Submitting form as: <%= @user.first_name %> <%= @user.last_name %> </h2>
 		<div class="row">
-			<!-- teen name -->
+			<div class="large-6 columns">
+				<%= f.label :teen, "Madrich/a Name:" %>
+				<%= f.select :teen, options_from_collection_for_select(@teen, "_id", "first_name"+"last_name") %>
+			</div>
 			<div class="large-6 columns">
 				<%= f.label :placement, "Assignment" %>
 				<%= f.select :placement, options_for_select([

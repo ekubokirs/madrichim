@@ -14,4 +14,6 @@ class TeenNew
 	key :youth,		String
 	key	:assign,	Array
 
+	timestamps!
+	userstamps!
 end

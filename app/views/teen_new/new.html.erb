@@ -56,16 +56,15 @@
 		<div class="row">
 			<%= f.label :days %>
 			<div class="large-4 columns">
-				<%= check_box(:days, "Sunday") %>
+				<%= f.check_box(:days, {}, "Sunday", "") %>
 				Sunday
 			</div>
 			<div class="large-4 columns">
-				<%= check_box(f, "Tuesday") %>
+				<%= f.check_box(:days,{}, "Tuesday","") %>
 				Tuesday
 			</div>
 			<div class="large-4 columns">
-				<%= f.check_box(:days, :wednesday) %>
-				<%= f.label(:days, "Wednesday") %>
+				<%= f.check_box(:days, {}, "Wednesday", "") %>Wednesday
 			</div>
 		</div>
 		<div class="row">
