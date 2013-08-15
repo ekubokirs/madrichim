@@ -1,6 +1,8 @@
 class User
   include MongoMapper::Document
 
+  many :incidents
+
   key :first_name,  String, :required =>  true
   key :last_name,   String, :required =>  true
   key :email,       String, :unique =>    true

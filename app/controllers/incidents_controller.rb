@@ -7,7 +7,7 @@ class IncidentsController <ApplicationController
 
 	def create
 		@incident = Incident.new incident_params
-		@incident._id = current_user._id
+		@incident.user = current_user
 		@incident.save
 
 		redirect_to root_url
@@ -18,7 +18,7 @@ class IncidentsController <ApplicationController
 
 	def incident_params
 		params.require(:incident).permit(
-			:participant,
+			{participants:[]},
 			:report)
 		
 	end
