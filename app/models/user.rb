@@ -10,9 +10,13 @@ class User
   key :expires_at,  Time
 
   before_create :set_random_password
-  before_save :encrypt_password
+  before_validation :encrypt_password
 
   attr_accessor :password, :password_confirmation
+
+  def full_name
+    first_name + " " + last_name
+  end
 
   def authenticate(password)
   	self.fish == BCrypt::Engine.hash_secret(password, self.salt)

@@ -48,7 +48,26 @@
 	</div>
 </div>
 <div class="row">
-	<% @teens.each do |teen| %>
-		
-	<% end %>
+	<table class="large-12 columns">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>E-Mail</th>
+				<th>Cell Phone</th>
+				<th>Home Phone</th>
+				<th>Birthday</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @teens.each do |teen| %>
+			<tr>
+				<td> <%= link_to teen.full_name, teen_index_url %> </td>
+				<td> <%= teen.email %> </td>
+				<td> <%= teen.cell_phone %> </td>
+				<td> <%= teen.home_phone %> </td>
+				<td> <%= teen.born_on %> </td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>

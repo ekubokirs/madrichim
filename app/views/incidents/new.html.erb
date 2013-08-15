@@ -4,17 +4,18 @@
 			<h1 class="ma_title">CTJ<br>Madrichim</h1>
 		</div>
 	</div>
-	<%= form_for @incident, url: {action: "create"} do |f| %>
+	<%= form_for :incident, url: {action: "create"} do |f| %>
 		<div class="row">
-			<%= f.label :reporter %>
-			<%= f.select :reporter, options_for_select %>
+			Reporter: <%= @user.full_name %>
 		</div>
 		<div class="row">
 			<div class="ma_par">
 				<%= f.label :participant %>
-				<%= f.select :participant, options_for_select %>
+				<%= f.select :participant, options_from_collection_for_select(@teens, "_id", "full_name") %>
 			</div>
-			<span><a href="#" class="ma_paradd"> Add Participants </a></span> 
+			<span>
+				<a href="#" class="ma_paradd"> Add Participants </a>
+			</span> 
 		</div>
 		<div class="row">
 			<%= f.label :report, "Please Describe the Incident" %>
@@ -22,6 +23,7 @@
 		</div>
 		<div class="row">
 			<%= f.submit "Submit", :class => "button" %>
+			<%= link_to "Cancel", root_url, :class => "button" %>
 		</div>
 	<% end %>
 </div>

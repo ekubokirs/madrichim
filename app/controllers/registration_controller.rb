@@ -20,7 +20,7 @@ class RegistrationController < ApplicationController
 		
 		@user.email = @registrant.email
 
-		if @user.save
+		if @user.save!
 			@registrant.destroy
 			session[:user_id] = @user._id
 			redirect_to root_url

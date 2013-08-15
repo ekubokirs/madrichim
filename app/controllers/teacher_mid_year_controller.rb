@@ -2,7 +2,7 @@ class TeacherMidYearController < ApplicationController
 	def new
 		@user = current_user
 		@teacherMY = TeacherMidYear.new
-		@teens = User.find_by_type("Teen").all
+		@teens = User.where(_type: "Teen").all
 	end
 
 	def create

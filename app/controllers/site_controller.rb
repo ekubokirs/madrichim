@@ -3,6 +3,9 @@ class SiteController < ApplicationController
 	
 	def index
 		@user = current_user
+		@teens = User.where(_type: "Teen").all
+		@teachers = User.where(_type: "Teacher").all
+
 		if is_teen?
 			then @dashboard = "teen_dashboard"
 		elsif is_teacher?

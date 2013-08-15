@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="large-6 columns">
 				<%= f.label :teen, "Madrich/a Name:" %>
-				<%= f.select :teen, options_from_collection_for_select(@teen, "_id", "first_name"+"last_name") %>
+				<%= f.select :teen, options_from_collection_for_select(@teens, "_id", "full_name") %>
 			</div>
 			<div class="large-6 columns">
 				<%= f.label :placement, "Assignment" %>

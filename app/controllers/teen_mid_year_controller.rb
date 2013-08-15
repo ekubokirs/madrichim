@@ -16,7 +16,7 @@ class TeenMidYearController < ApplicationController
 	private
 
 	def mid_year_params
-		params.require(:teen_mid_year_form).permit(
+		params.require(:teen_mid_year).permit(
 			:placement,
 			:aid,
 			:initiative,
