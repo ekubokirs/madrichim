@@ -3,6 +3,8 @@ class TeacherMidYear
 
 	belongs_to :teacher
 
+	belongs_to :teen
+
 	key :placement,						String
 	key :aid,									String
 	key :initiative,					String

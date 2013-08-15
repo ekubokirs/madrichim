@@ -4,7 +4,8 @@ class Incident
   belongs_to :user
 
   key :participants,	Array
-  key	:report,			String
+  key	:report,				String
+  key	:otherp,				String
 
   timestamps!
 end

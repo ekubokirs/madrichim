@@ -2,6 +2,12 @@ class Teen < User
 
   many	:teen_mid_year
   many 	:teen_end_year
+
+  many 	:admin_interviews
+
+  many	:teacher_mid_year
+  many	:teacher_end_year
+
   one		:teen_new
   one		:teen_end
 

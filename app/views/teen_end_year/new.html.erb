@@ -51,15 +51,45 @@
 		</div>
 		<div class="row">
 			<%= f.label :days %>
-			<%= f.check_box :sunday %>
-			<%= f.check_box :tuesday %>
-			<%= f.check_box :wednesday %>
+			<div class="large-4 columns">
+				<%= check_box_tag("teen_new[days][]", "Sunday") %>
+				<span class="ma_day">Sunday</span>
+			</div>
+			<div class="large-4 columns">
+				<%= check_box_tag("teen_new[days][]", "Tuesday") %>
+				<span class="ma_day">Tuesday</span>
+			</div>
+			<div class="large-4 columns">
+				<%= check_box_tag("teen_new[days][]", "Wednesday") %>
+				<span class="ma_day">Wednesday</span>
+			</div>
 		</div>
 		<div class="row">
-			<%= f.label :assign %>
+			<div class="row">
+				<%= f.label :assign, "Request for Assignment" %>
+				<div class="large-4 columns">
+					<%= check_box_tag("teen_new[assign][]", "Classroom") %>
+					<span class="ma_assign">Classroom</span>
+				</div>
+				<div class="large-4 columns">
+					<%= check_box_tag("teen_new[assign][]", "Chug") %>
+					<span class="ma_assign">Chug</span>
+				</div>
+				<div class="large-4 columns">
+					<%= check_box_tag("teen_new[assign][]", "Office") %>
+					<span class="ma_assign">Office</span>
+				</div>
+			</div>
+			<div class="row">
+				<%= f.text_field :request %>
+			</div>
 		</div>
 		<div class="row">
-			<%= f.label :youth %>
+			<%= f.label :youth, "Would you like to staff youth events?" %>
+			<%= f.radio_button(:youth, "Yes") %>
+			<span>Yes</span>
+			<%= f.radio_button(:youth, "No") %>
+			<span>No</span>
 		</div>
 		<div class="row">
 			<%= f.submit "Submit", :class => "button" %>

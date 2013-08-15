@@ -19,7 +19,8 @@ class IncidentsController <ApplicationController
 	def incident_params
 		params.require(:incident).permit(
 			{participants:[]},
-			:report)
+			:report,
+			:otherp)
 		
 	end
 end

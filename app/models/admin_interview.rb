@@ -3,6 +3,8 @@ class AdminInterview
 
   belongs_to :admin
 
+  belongs_to :teen
+
   key :self, String
   key :children, String
   key :strength, String
