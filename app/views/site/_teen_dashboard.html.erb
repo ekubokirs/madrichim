@@ -62,18 +62,70 @@
 	</div>
 </div>
 <div class="row">
-	<table>
+	<table class = "large-6 columns">
 		<thead>
 			<tr>
-				<td>Form Name</td>
+				<td>Mid-Year</td>
 				<td>Time Stamp</td>
 			</tr>
 		</thead>
 		<tbody>
+			<% @form_mid.each do |fn| %>
 			<tr>
-				<td></td>
-				<td></td>
+				<td> <%= link_to fn.id %> </td>
+				<td> <%= fn.updated_at %> </td>
 			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<table class = "large-6 columns">
+		<thead>
+			<tr>
+				<td>End of Year Evaluation and Reapplication</td>
+				<td>Time Stamp</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @form_end.each do |fn| %>
+			<tr>
+				<td> <%= link_to fn.id %> </td>
+				<td> <%= fn.updated_at %> </td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<div class="row">
+	<table class = "large-6 columns">
+		<thead>
+			<tr>
+				<td>Application</td>
+				<td>Time Stamp</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @form_new.each do |fn| %>
+			<tr>
+				<td> <%= link_to fn.id %> </td>
+				<td> <%= fn.updated_at %> </td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<table class = "large-6 columns">
+		<thead>
+			<tr>
+				<td>Non-Returning Application</td>
+				<td>Time Stamp</td>
+			</tr>
+		</thead>
+		<tbody>
+			<%# @form_mid.each do |fn| %>
+			<tr>
+				<td> <%#= link_to fn.id %> </td>
+				<td> <%#= fn.updated_at %> </td>
+			</tr>
+			<%# end %>
 		</tbody>
 	</table>
 </div>

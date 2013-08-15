@@ -7,11 +7,17 @@ class SiteController < ApplicationController
 		@teachers = User.where(_type: "Teacher").all
 
 		if is_teen?
-			then @dashboard = "teen_dashboard"
+			@dashboard = "teen_dashboard"
+			@form_new = TeenNew.where(teen_id: @user._id).all
+			@form_mid = TeenMidYear.where(teen_id: @user._id).all
+			@form_end = TeenEndYear.where(teen_id: @user._id).all
+			# @form_term = TeenTerm.where(teen_id: @user_id).all
 		elsif is_teacher?
-			 then @dashboard = "teacher_dashboard"
+			@dashboard = "teacher_dashboard"
+			@form_mid = TeacherMidYear.where(teen_id: @user._id).all
+			@form_end = TeacherEndYear.where(teen_id: @user._id).all
 		elsif is_admin?
-			then @dashboard = "admin_dashboard"
+			@dashboard = "admin_dashboard"
 		else
 			redirect_to login_url
 			flash[:alert] = "You Lie!  Try Again!"

@@ -61,7 +61,7 @@
 		<tbody>
 			<% @teens.each do |teen| %>
 			<tr>
-				<td> <%= link_to teen.full_name, teen_index_url %> </td>
+				<td> <%= link_to teen.full_name, teen_url(teen) %> </td>
 				<td> <%= teen.email %> </td>
 				<td> <%= teen.cell_phone %> </td>
 				<td> <%= teen.home_phone %> </td>

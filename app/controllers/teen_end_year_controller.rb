@@ -5,7 +5,7 @@ def new
 	end
 
 	def create
-		@teen_end = TeenEndYear.new new_params
+		@teen_end = TeenEndYear.new end_params
 		@teen_end._id = current_user._id
 		@teen_end.save
 

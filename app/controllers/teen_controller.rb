@@ -5,6 +5,6 @@ class TeenController < ApplicationController
 
  def show
  	@teens = User.where(_type: "Teen").all
- 	@teen = @teens.find(params[:_id])
+ 	@teen = User.find(params[:id])
  end 
 end
