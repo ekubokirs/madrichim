@@ -24,7 +24,7 @@ class TeenNewController < ApplicationController
 			:goal,
 			:jact,
 			:act,
-			:days,
+			{days:[]},
 			:youth,
 			:assign,
 			:request
