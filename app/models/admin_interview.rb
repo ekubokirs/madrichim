@@ -5,7 +5,7 @@ class AdminInterview
 
   belongs_to :teen
 
-  key :self, String
+  key :yourself, String
   key :children, String
   key :strength, String
   key :weak, String

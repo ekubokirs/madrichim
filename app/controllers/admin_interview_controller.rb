@@ -9,11 +9,15 @@ class AdminInterviewController < ApplicationController
 	def create
 		@adminInterview = AdminInterview.new interview_params
 		@adminInterview.admin = current_user
-		# @adminInterview.teen = 
 		@adminInterview.save
 
 		redirect_to root_url
 		flash[:notice] = "Form Saved!"
+	end
+
+	def show
+		@interview = AdminInterview.find(params[:id])
+		@teen = User.find(@interview.teen_id)
 	end
 
 	private
@@ -21,7 +25,7 @@ class AdminInterviewController < ApplicationController
 	def interview_params
 		params.require(:admin_interview).permit(
 			:teen_id,
-			:self,
+			:yourself,
   		:children,
   		:strength,
   		:weak,

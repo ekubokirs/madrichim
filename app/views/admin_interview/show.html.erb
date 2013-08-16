@@ -1,0 +1,74 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row">
+			<div class="ma_ail">Tell us about yourself.</div>
+			<%= @interview.yourself %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">What experience do you have working with children? </div>
+			<%= @interview.children %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">What are three of your strengths?</div>
+			<%= @interview.strength %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">What are three of your weaknesses?</div>
+			<%= @interview.weak %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">
+				What do you think will challenge you most about this program?
+			</div>
+			<%= @interview.challenges %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">
+				What age group do you think you will be most comfortable working with?
+			</div>
+			<%= @interview.groups %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">
+				Do you have any other talents such as art or drama?
+			</div>
+			<%= @interview.talent %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">
+				What would you do if someone asked you a question you didn't know the answer to?
+			</div>
+			<%= f.text_area :question %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">
+				What would you do if you saw a child crying in the parking lot?
+			</div>
+			<%= @interview.crying %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">
+				What would you do if a child was acting up during Tefillah?
+			</div>
+			<%= @interview.tefillah %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">
+				Is there another Madrich/a that you think sets a good example?
+			</div>
+			<%= @interview.madrich %>
+		</div>
+		<div class="row">
+			<div class="ma_ail">
+				Is there anything else you think we should know?
+			</div>
+			<%= @interview.other %>
+		</div>
+	<div class="row">
+		<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+	</div>
+</div>
