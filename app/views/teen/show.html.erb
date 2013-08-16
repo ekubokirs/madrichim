@@ -18,7 +18,7 @@
 			<tbody>
 				<% @form_mid.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, teen_mid_year_url(@teen) %> </td>
+					<td> <%= link_to fn.id, teen_mid_year_url(fn.id) %> </td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
@@ -32,12 +32,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% @form_teach_mid.each do |fn| %>
+				<% #@form_teach_mid.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
-					<td> <%= fn.updated_at %> </td>
+					<td> <%#= link_to fn.id %> </td>
+					<td> <%#= fn.updated_at %> </td>
 				</tr>
-				<% end %>
+				<% #end %>
 			</tbody>
 		</table>
 	</div>
@@ -66,12 +66,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% @form_teach_end.each do |fn| %>
+				<% #@form_teach_end.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
-					<td> <%= fn.updated_at %> </td>
+					<td> <%#= link_to fn.id %> </td>
+					<td> <%#= fn.updated_at %> </td>
 				</tr>
-				<% end %>
+				<% #end %>
 			</tbody>
 		</table>
 	</div>
@@ -100,12 +100,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%# @form_mid.each do |fn| %>
+				<% @form_term.each do |fn| %>
 				<tr>
-					<td> <%#= link_to fn.id %> </td>
-					<td> <%#= fn.updated_at %> </td>
+					<td> <%= link_to fn.id %> </td>
+					<td> <%= fn.updated_at %> </td>
 				</tr>
-				<%# end %>
+				<% end %>
 			</tbody>
 		</table>
 	</div>

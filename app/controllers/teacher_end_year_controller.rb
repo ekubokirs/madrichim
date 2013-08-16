@@ -1,14 +1,14 @@
-class TeacherMidYearController < ApplicationController
+class TeacherEndYearController < ApplicationController
 	def new
 		@user = current_user
-		@teacherMY = TeacherMidYear.new
+		@teacherEY = TeacherEndYear.new
 		@teens = User.where(_type: "Teen").all
 	end
 
 	def create
-		@teacherMY = TeacherMidYear.new mid_year_params
-		@teacherMY.teacher = current_user
-		@teacherMY.save
+		@teacherEY = TeacherMidYear.new end_year_params
+		@teacherEY.teacher = current_user
+		@teacherEY.save
 
 		redirect_to root_url
 		flash[:notice] = "Form Saved!"
@@ -16,8 +16,8 @@ class TeacherMidYearController < ApplicationController
 
 	private
 
-	def mid_year_params
-		params.require(:teacher_mid_year).permit(
+	def end_year_params
+		params.require(:teacher_end_year).permit(
 			:teen_id, 
 			:placement,
 			:aid,
@@ -26,7 +26,9 @@ class TeacherMidYearController < ApplicationController
 			:reliable,
 			:srelation,
 			:overall_performance,
+			:grow,
 			:other_teens,
+			:request
 		)
 	end	
 end

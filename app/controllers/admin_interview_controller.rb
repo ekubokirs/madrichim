@@ -20,6 +20,7 @@ class AdminInterviewController < ApplicationController
 
 	def interview_params
 		params.require(:admin_interview).permit(
+			:teen_id,
 			:self,
   		:children,
   		:strength,

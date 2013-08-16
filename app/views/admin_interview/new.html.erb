@@ -6,8 +6,8 @@
 	</div>
 	<%= form_for :admin_interview, url: {action: "create"} do |f| %>
 		<div class="row">
-			<%= f.label :teen, "Madrich/a Name:" %>
-				<%= f.select :teen, options_from_collection_for_select(@teens, "_id", "full_name") %>
+			<%= f.label :teen_id, "Madrich/a Name:" %>
+				<%= f.select :teen_id, options_from_collection_for_select(@teens, "_id", "full_name") %>
 		</div>
 		<div class="row">
 			<%= f.label :self, "Tell us about yourself." %>

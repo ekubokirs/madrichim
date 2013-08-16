@@ -14,9 +14,8 @@ class TeenMidYearController < ApplicationController
 	end
 
 	def show
-		@teens = User.where(_type: "Teen").all
 		@teen = current_user
-		@teen_mid = TeenMidYear.where(teen_id: @teen).all
+		@teen_mid = TeenMidYear.find(params[:id])
 	end
 
 	private
