@@ -9,7 +9,7 @@ class Teen < User
   many	:teacher_end_year
 
   one		:teen_new
-  one		:teen_end
+  one		:teen_term
 
 	key :born_on,			Date
 	key :zipcode,			Integer

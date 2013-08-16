@@ -1,0 +1,88 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+		<%= form_for :teacher_end_year, url: {action: "create"} do |f| %>
+		<h2> Submitting form as: <%= @user.first_name %> <%= @user.last_name %> </h2>
+		<div class="row">
+			<div class="large-6 columns">
+				<%= f.label :teen, "Madrich/a Name:" %>
+				<%= f.select :teen, options_from_collection_for_select(@teens, "_id", "full_name") %>
+			</div>
+			<div class="large-6 columns">
+				<%= f.label :placement, "Assignment" %>
+				<%= f.select :placement, options_for_select([
+					["Kindergarten",	"K"],
+					["First Grade",		"1"],
+					["Second Grade",	"2"],
+					["Third Grade",		"3"],
+					["Fourth Grade",	"4"],
+					["Fifth Grade", 	"5"],
+					["Cooking", 			"Cook"],
+					["Sports",				"Sport"],
+					["Art",						"Art"],
+					["Drama",					"Drama"],
+					["Music",					"Music"],
+					["Office",				"Office"]]) %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<span>
+					Please rank your madrich/a in the following areas:
+				</span>
+				<%= f.label :aid, "Overall Classroom aid:" %>
+				<%= f.select :aid, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+				<%= f.label :initiative, "Taking inititive:" %>
+				<%= f.select :initiative, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+				<%= f.label :behave, "Helping manage classroom behavior:" %>
+				<%= f.select :behave, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+				<%= f.label :reliable, "Relability:" %>
+				<%= f.select :reliable, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+				<%= f.label :srelation, "Relationship with Students:" %>
+				<%= f.select :srelation, options_for_select([
+					["Poor", 					"1"],
+					["Insufficient", 	"2"],
+					["Adequate", 			"3"],
+					["Excellent", 		"4"]]) %>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.label :overall_performace, "Please expand on the overall performance of this madrich/a" %>
+			<%= f.text_area :overall_performace %>
+		</div>
+		<div class="row">
+			<%= f.label :grow, "How did your madrich/a show growth this year?" %>
+			<%= f.text_area :grow %>
+		</div>
+		<div class="row">
+				<%= f.label :other_teens, "Please comment on the performace of any other madrichim other than those assigned to you." %>
+			<%= f.text_area :other_teens %>
+		</div>
+		<div class="row">
+			<%= f.label :request, "Do you have any requests for madrichim for next year?" %>
+			<%= f.text_area :request %>
+		</div>
+		<div class="row">
+			<%= f.submit :class => "button" %>
+			<%= link_to "Cancel", root_url, :class => "button" %>
+		</div>
+	<% end %>
+	</div>

@@ -7,7 +7,7 @@ class TeacherMidYearController < ApplicationController
 
 	def create
 		@teacherMY = TeacherMidYear.new mid_year_params
-		@teacherMY._id = current_user._id
+		@teacherMY.teacher = current_user
 		@teacherMY.save
 
 		redirect_to root_url
@@ -18,7 +18,7 @@ class TeacherMidYearController < ApplicationController
 
 	def mid_year_params
 		params.require(:teacher_mid_year).permit(
-			:teen,
+			:teen_id, 
 			:placement,
 			:aid,
 			:initiative,

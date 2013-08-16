@@ -13,6 +13,12 @@ class TeenMidYearController < ApplicationController
 		flash[:notice] = "Form Saved!"
 	end
 
+	def show
+		@teens = User.where(_type: "Teen").all
+		@teen = current_user
+		@teen_mid = TeenMidYear.where(teen_id: @teen).all
+	end
+
 	private
 
 	def mid_year_params

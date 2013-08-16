@@ -3,10 +3,13 @@ class AdminInterviewController < ApplicationController
 	def new
 		@user = current_user
 		@adminInterview = AdminInterview.new
+		@teens = User.where(_type: "Teen").all
 	end
 
 	def create
 		@adminInterview = AdminInterview.new interview_params
+		@adminInterview.admin = current_user
+		# @adminInterview.teen = 
 		@adminInterview.save
 
 		redirect_to root_url

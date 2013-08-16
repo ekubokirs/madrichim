@@ -15,7 +15,7 @@ class SiteController < ApplicationController
 		elsif is_teacher?
 			@dashboard = "teacher_dashboard"
 			@form_mid = TeacherMidYear.where(teen_id: @user._id).all
-			@form_end = TeacherEndYear.where(teen_id: @user._id).all
+			# @form_end = TeacherEndYear.where(teen_id: @user._id).all
 		elsif is_admin?
 			@dashboard = "admin_dashboard"
 		else
