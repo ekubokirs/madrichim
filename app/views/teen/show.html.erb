@@ -4,8 +4,13 @@
 			<h1 class="ma_title">CTJ<br>Madrichim</h1>
 		</div>
 	</div>
-	<div class="ma_greet">
-		<%= @teen.full_name %>
+	<div class="row">
+		<div class="large-6 columns">
+			<%= @teen.full_name %>
+		</div>
+		<div class="large-6 columns">
+			<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+		</div>
 	</div>
 	<div class="row">
 		<table class = "large-6 columns">
@@ -32,12 +37,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% #@form_teach_mid.each do |fn| %>
+				<% @form_teach_mid.each do |fn| %>
 				<tr>
-					<td> <%#= link_to fn.id %> </td>
-					<td> <%#= fn.updated_at %> </td>
+					<td> <%= link_to fn.id %> </td>
+					<td> <%= fn.updated_at %> </td>
 				</tr>
-				<% #end %>
+				<% end %>
 			</tbody>
 		</table>
 	</div>
@@ -66,12 +71,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% #@form_teach_end.each do |fn| %>
+				<% @form_teach_end.each do |fn| %>
 				<tr>
-					<td> <%#= link_to fn.id %> </td>
-					<td> <%#= fn.updated_at %> </td>
+					<td> <%= link_to fn.id %> </td>
+					<td> <%= fn.updated_at %> </td>
 				</tr>
-				<% #end %>
+				<% end %>
 			</tbody>
 		</table>
 	</div>
@@ -109,4 +114,55 @@
 			</tbody>
 		</table>
 	</div>
+	<div class = "row">
+		<table class = "large-6 columns">
+			<thead>
+				<tr>
+					<td>Incident Reports Involved In</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @incident.each do |fn| %>
+				<tr>
+					<td> <%= link_to fn.id %> </td>
+					<td> <%= fn.updated_at %> </td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<table class = "large-6 columns">
+			<thead>
+				<tr>
+					<td>Incidents Reported</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @incident_r.each do |fn| %>
+				<tr>
+					<td> <%= link_to fn.id %> </td>
+					<td> <%= fn.updated_at %> </td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div class = "row">
+		<table class = "large-6 columns">
+			<thead>
+				<tr>
+					<td>Inteview Forms</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @interview.each do |fn| %>
+				<tr>
+					<td> <%= link_to fn.id %> </td>
+					<td> <%= fn.updated_at %> </td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
 </div>

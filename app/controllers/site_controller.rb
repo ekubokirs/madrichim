@@ -12,10 +12,12 @@ class SiteController < ApplicationController
 			@form_mid = TeenMidYear.where(teen_id: @user._id).all
 			@form_end = TeenEndYear.where(teen_id: @user._id).all
 			@form_term = TeenTerm.where(teen_id: @user_id).all
+			@incident = Incident.where(user_id: @user.id).all
 		elsif is_teacher?
 			@dashboard = "teacher_dashboard"
 			@form_mid = TeacherMidYear.where(teacher_id: @user.id).all
 			@form_end = TeacherEndYear.where(teacher_id: @user.id).all
+			@incident = Incident.where(user_id: @user.id).all
 		elsif is_admin?
 			@dashboard = "admin_dashboard"
 		else

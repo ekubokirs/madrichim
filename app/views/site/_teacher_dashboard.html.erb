@@ -44,6 +44,24 @@
 	</div>
 </div>
 <div class="row">
+	<table class = "large-12 columns">
+		<thead>
+			<tr>
+				<td>Incident Reports</td>
+				<td>Time Stamp</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @incident.each do |fn| %>
+			<tr>
+				<td> <%= link_to fn.id %> </td>
+				<td> <%= fn.updated_at %> </td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<div class="row">
 	<table class = "large-6 columns">
 		<thead>
 			<tr>
@@ -68,12 +86,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% #@form_end.each do |fn| %>
+			<% @form_end.each do |fn| %>
 			<tr>
-				<td> <%#= link_to fn.id %> </td>
-				<td> <%#= fn.updated_at %> </td>
+				<td> <%= link_to fn.id %> </td>
+				<td> <%= fn.updated_at %> </td>
 			</tr>
-			<% #end %>
+			<% end %>
 		</tbody>
 	</table>
 </div>
