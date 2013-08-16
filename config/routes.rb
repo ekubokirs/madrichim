@@ -29,6 +29,9 @@ Madrichim::Application.routes.draw do
   # Logout
   get    'logout' => "session#destroy", as: :logout
   delete 'logout' => "session#destroy"
+
+  get 'dresscode' => "site#dress"
+  get 'lesson' => "site#lesson"
   
   root 'site#index'
 end

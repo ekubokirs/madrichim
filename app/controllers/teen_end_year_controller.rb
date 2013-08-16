@@ -1,5 +1,5 @@
 class TeenEndYearController < ApplicationController
-def new
+	def new
 		@user = current_user
 		@teen_end = TeenEndYear.new
 	end

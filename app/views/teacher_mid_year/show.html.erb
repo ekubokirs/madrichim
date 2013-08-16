@@ -1,0 +1,57 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row ma_greet">
+		<%= @teen.full_name %>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Placement: </span>
+		<%= @teach_mid.placement %>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showh">Rankings</span>
+		<table>
+			<tr>
+				<td>Overall Classroom Aid</td>
+				<td><%= @teach_mid.aid %></td>
+			</tr>
+			<tr>
+				<td>Taking Inititive</td>
+				<td><%= @teach_mid.initiative %></td>
+			</tr>
+			<tr>
+				<td>Helping Manage Classroom Behavior</td>
+				<td><%= @teach_mid.behave %></td>
+			</tr>
+			<tr>
+				<td>Reliability</td>
+				<td><%= @teach_mid.reliable %></td>
+			</tr>
+			<tr>
+				<td>Relationship with Students</td>
+				<td><%= @teach_mid.srelation %></td>
+			</tr>
+		</table>
+	</div>	
+	<div class="row">
+		<div class="large-12 columns">
+			<span class="ma_showl">Overall Performance: </span>
+			<%= @teach_mid.overall_performance %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<span class="ma_showl">Comments on Other Madrichim</span>
+			<%= @teach_mid.other_teens %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+	</div>
+</div>

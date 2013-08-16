@@ -72,7 +72,7 @@
 		<tbody>
 			<% @form_mid.each do |fn| %>
 			<tr>
-				<td> <%= link_to fn.id %> </td>
+				<td> <%= link_to fn.id, teacher_mid_year_url(fn.id) %> </td>
 				<td> <%= fn.updated_at %> </td>
 			</tr>
 			<% end %>

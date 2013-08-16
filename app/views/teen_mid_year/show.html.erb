@@ -8,7 +8,48 @@
 		<%= @teen.full_name %>
 	</div>
 	<div class="row">
-		Placement: <%= @teen_mid.placement %>
+		<span class="ma_showl">Placement: </span>
+		<%= @teen_mid.placement %>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showh">Rankings</span>
+		<table>
+			<tr>
+				<td>Overall Classroom Aid</td>
+				<td><%= @teen_mid.aid %></td>
+			</tr>
+			<tr>
+				<td>Taking Inititive</td>
+				<td><%= @teen_mid.initiative %></td>
+			</tr>
+			<tr>
+				<td>Helping Manage Classroom Behavior</td>
+				<td><%= @teen_mid.behave %></td>
+			</tr>
+			<tr>
+				<td>Reliability</td>
+				<td><%= @teen_mid.reliable %></td>
+			</tr>
+			<tr>
+				<td>Relationship with Students</td>
+				<td><%= @teen_mid.srelation %></td>
+			</tr>
+		</table>
+	</div>	
+	<div class="row">
+		<div class="large-12 columns">
+			<span class="ma_showl">Overall Performance: </span>
+			<%= @teen_mid.overall_performance %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<span class="ma_showl">Comments on Other Madrichim</span>
+			<%= @teen_mid.other_teens %>
+		</div>
+		<hr>
 	</div>
 	<div class="row">
 		<%= link_to "Back to Dashboard", root_url, :class => "button" %>

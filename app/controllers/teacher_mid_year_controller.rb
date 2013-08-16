@@ -14,6 +14,12 @@ class TeacherMidYearController < ApplicationController
 		flash[:notice] = "Form Saved!"
 	end
 
+	def show
+		@teach_mid = TeacherMidYear.find(params[:id])
+		@teen = User.find(@teach_mid.teen_id)
+	end
+
+
 	private
 
 	def mid_year_params

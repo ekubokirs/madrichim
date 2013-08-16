@@ -14,8 +14,8 @@ class TeenMidYearController < ApplicationController
 	end
 
 	def show
-		@teen = current_user
 		@teen_mid = TeenMidYear.find(params[:id])
+		@teen = Teen.find(@teen_mid.teen_id)
 	end
 
 	private
@@ -25,6 +25,7 @@ class TeenMidYearController < ApplicationController
 			:placement,
 			:aid,
 			:initiative,
+			:behave,
 			:reliable,
 			:srelation,
 			:overall_performance,
