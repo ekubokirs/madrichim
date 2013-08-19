@@ -12,7 +12,7 @@ class PasswordController < ApplicationController
 		@user = User.find_by_code(params[:code])
 
 		if @user and @user.expires_at >Time.now
-			@user.update_attributes(user_params)
+			@user.update_attributes!(user_params)
 			@user.code = nil
 			@user.expires_at = nil
 
@@ -33,7 +33,7 @@ class PasswordController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(
+		params.permit(
       :password,
       :password_confirmation,
       :code,

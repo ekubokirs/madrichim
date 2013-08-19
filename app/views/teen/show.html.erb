@@ -33,6 +33,7 @@
 			<thead>
 				<tr>
 					<td>Teacher Mid-Year</td>
+					<td>Teacher Name<td>
 					<td>Time Stamp</td>
 				</tr>
 			</thead>
@@ -40,6 +41,7 @@
 				<% @form_teach_mid.each do |fn| %>
 				<tr>
 					<td> <%= link_to fn.id, teacher_mid_year_url(fn.id) %> </td>
+					<td> <%= fn.teacher.full_name %></td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
@@ -67,6 +69,7 @@
 			<thead>
 				<tr>
 					<td>End of Year Teacher Evaluation</td>
+					<td>Teacher Name</td>
 					<td>Time Stamp</td>
 				</tr>
 			</thead>
@@ -74,6 +77,7 @@
 				<% @form_teach_end.each do |fn| %>
 				<tr>
 					<td> <%= link_to fn.id, teacher_end_year_url(fn.id) %> </td>
+					<td><%= fn.teacher.full_name %></td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>

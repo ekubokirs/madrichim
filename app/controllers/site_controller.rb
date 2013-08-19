@@ -11,7 +11,7 @@ class SiteController < ApplicationController
 			@form_new		= TeenNew.where(teen_id: @user._id).all
 			@form_mid		= TeenMidYear.where(teen_id: @user._id).all
 			@form_end		= TeenEndYear.where(teen_id: @user._id).all
-			@form_term	= TeenTerm.where(teen_id: @user_id).all
+			@form_term	= TeenTerm.where(teen_id: @user._id).all
 			@incident 	= Incident.where(user_id: @user.id).all
 		elsif is_teacher?
 			@dashboard 	= "teacher_dashboard"

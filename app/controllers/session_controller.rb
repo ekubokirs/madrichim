@@ -11,10 +11,10 @@ class SessionController < ApplicationController
 			if @user
 				if params[:password].blank?
 					@user.code = SecureRandom.urlsafe_base64
-					@user.expires_at = Time.now +4.hours
+					@user.expires_at = Time.now + 4.hours
 					@user.save
 
-					PasswordMailer.reset_email(user).deliver
+					PasswordMailer.reset_email(@user).deliver
 					redirect_to login_url
 					flash[:alert] = "Password Reset E-mail Sent!"
 				else
