@@ -14,6 +14,11 @@ class IncidentsController <ApplicationController
 		flash[:notice] = "Incident Logged"
 	end
 
+	def show
+		@incident = Incident.find(params[:id])
+		@user = User.find(@incident.user_id)
+	end
+
 	private
 
 	def incident_params

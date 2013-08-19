@@ -14,6 +14,7 @@ class TeenNew
 	key :youth,		String
 	key	:assign,	Array
 	key	:request,	String
+	key	:desc,		String
 
 	timestamps!
 end

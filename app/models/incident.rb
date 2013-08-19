@@ -8,4 +8,8 @@ class Incident
   key	:otherp,				String
 
   timestamps!
+
+  def part_names
+  	User.find(participants).map(&:full_name).join(", ")
+  end
 end

@@ -40,18 +40,24 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<span class="ma_showl">Overall Performance: </span>
-			<%= @teach_mid.overall_performance %>
+			<p><%= @teach_mid.overall_performance %></p>
 		</div>
 		<hr>
 	</div>
 	<div class="row">
 		<div class="large-12 columns">
 			<span class="ma_showl">Comments on Other Madrichim</span>
-			<%= @teach_mid.other_teens %>
+			<p><%= @teach_mid.other_teens %></p>
 		</div>
 		<hr>
 	</div>
 	<div class="row">
-		<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+		<% if is_teacher? %>
+			<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+		<% elsif is_admin? %>
+			<%= link_to "Back to Madrich/a Page", teen_url(@teen), :class => "button" %>
+		<% else %>
+			<%= link_to "Whoops", login_url, :class => "button" %>
+		<% end %>
 	</div>
 </div>

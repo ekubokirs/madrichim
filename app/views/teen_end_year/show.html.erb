@@ -1,0 +1,77 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row ma_greet">
+		<%= @teen.full_name %>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_showl">Placement: </span>
+			<%= @teen_end.placement %>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_showl">T-Shirt Size: </span>
+			<%= @teen_end.size %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_showl">School: </span>
+			<%= @teen_end.school %>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_showl">Grade: </span>
+			<%= @teen_end.grade %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">What would you change about this year? For the program? For yourself?</span>
+		<p><%= @teen_end.change %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">What would you keep the same? For the program? For yourself?</span>
+		<p><%= @teen_end.grow %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Days</span>
+		<p><%= @teen_end.days %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_showl">Assignment Request:</span>
+			<p><%= @teen_end.assign %></p>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_showl">Requests: </span>
+			<p><%= @teen_end.request %></p>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Personal Description for Teacher:</span>
+		<p><%= @teen_end.desc %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Staff Youth Events?</span>
+		<p><%= @teen_end.youth %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<% if is_teen? %>
+			<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+		<% elsif is_admin? %>
+			<%= link_to "Back to Madrich/a Page", teen_url(@teen), :class => "button" %>
+		<% else %>
+			<%= link_to "Whoops", login_url, :class => "button" %>
+		<% end %>
+	</div>
+</div>

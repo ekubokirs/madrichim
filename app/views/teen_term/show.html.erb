@@ -1,0 +1,55 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row ma_greet">
+		<%= @teen.full_name %>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_showl">Placement: </span>
+			<%= @teen_term.placement %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Why are you choosing not to return?</span>
+		<p><%= @teen_term.leave %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">What would you change about this year for the program?</span>
+		<p><%= @teen_term.change %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">What would you keep the same for the program?</span>
+		<p><%= @teen_term.same %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">What do you think you learned/How do you think you grew this year?</span>
+		<p><%= @teen_term.grow %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">What do you think you was the most valuable thing you gained from being part of the madrichim program?</span>
+		<p><%= @teen_term.learn %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">How has being a part of the madrichim program impacted you?</span>
+		<p><%= @teen_term.life %></p>
+		<hr>
+	<div class="row">
+		<% if is_teen? %>
+			<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+		<% elsif is_admin? %>
+			<%= link_to "Back to Madrich/a Page", teen_url(@teen), :class => "button" %>
+		<% else %>
+			<%= link_to "Whoops", login_url, :class => "button" %>
+		<% end %>
+	</div>
+</div>

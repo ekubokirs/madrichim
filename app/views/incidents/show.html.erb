@@ -1,0 +1,30 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Reporter: </span>
+		<%= @user.full_name %>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Participants: </span>
+		<%= @incident.part_names %>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Other Participants: </span>
+		<%= @incident.otherp %>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Description:<span>
+		<p><%= @incident.report %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+	</div>
+</div>

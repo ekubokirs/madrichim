@@ -13,6 +13,13 @@ class TeenNewController < ApplicationController
 		flash[:notice] = "Application Saved!"
 	end
 
+	def show
+		@teen_new = TeenNew.find(params[:id])
+		@teen = Teen.find(@teen_new.teen_id)
+		puts "*"*50
+		puts @teen
+	end
+
 	private
 
 	def new_params
@@ -26,8 +33,9 @@ class TeenNewController < ApplicationController
 			:act,
 			{days:[]},
 			:youth,
-			:assign,
-			:request
+			{assign:[]},
+			:request,
+			:desc
 		)
 	end
 end

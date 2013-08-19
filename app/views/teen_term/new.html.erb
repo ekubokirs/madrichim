@@ -6,18 +6,37 @@
 	</div>
 	<%= form_for :teen_term, url: {action: "create"} do |f| %>
 		<div class="row">
-			<h2>Submitting form as: <%= @user.first_name %> <%= @user.last_name %></h2>
+			<span class="large-12 columns ma_open">Submitting form as: <%= @user.first_name %> <%= @user.last_name %></span>
+			<hr>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<%= f.label :placement, "Assignment" %>
+				<%= f.select :placement, options_for_select([
+					["Kindergarten"],
+					["First Grade"],
+					["Second Grade"],
+					["Third Grade"],
+					["Fourth Grade"],
+					["Fifth Grade"],
+					["Cooking"],
+					["Sports"],
+					["Art"],
+					["Drama"],
+					["Music"],
+					["Office"]]) %>
+			</div>
 		</div>
 		<div class="row">
 			<%= f.label :leave, "Why are you choosing not to return?" %>
 			<%= f.text_field :leave %>
 		</div>
 		<div class="row">
-			<%= f.label :change, "What would you change about this year? For the program? For yourself?" %>
+			<%= f.label :change, "What would you change about this year for the program?" %>
 			<%= f.text_area :change %>
 		</div>
 		<div class="row">
-			<%= f.label :same, "What would you keep the same? For the program? For yourself?" %>
+			<%= f.label :same, "What would you keep the same for the program?" %>
 			<%= f.text_area :same %>
 		</div>
 		<div class="row">

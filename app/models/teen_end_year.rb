@@ -3,14 +3,18 @@ class TeenEndYear
 
 	belongs_to :teen
 
-	key :school,	String
-	key :grade, 	String
-	key	:size,		String
-	key	:change,	String
-	key	:same,		String
-	key	:grow,		String
-	key :days,		String
-	key :youth,		String
-	key	:assign,	String
+	key	:placement,	String
+	key :school,		String
+	key :grade, 		String
+	key	:size,			String
+	key	:change,		String
+	key	:same,			String
+	key	:grow,			String
+	key :days,			Array
+	key :youth,			String
+	key	:assign,		Array
+	key	:request,		String
+	key	:desc,			String
 
+	timestamps!
 end

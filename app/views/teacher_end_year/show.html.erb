@@ -1,0 +1,77 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row ma_greet">
+		<%= @teen.full_name %>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Placement: </span>
+		<%= @teach_end.placement %>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showh">Rankings</span>
+		<table>
+			<tr>
+				<td>Overall Classroom Aid</td>
+				<td><%= @teach_end.aid %></td>
+			</tr>
+			<tr>
+				<td>Taking Inititive</td>
+				<td><%= @teach_end.initiative %></td>
+			</tr>
+			<tr>
+				<td>Helping Manage Classroom Behavior</td>
+				<td><%= @teach_end.behave %></td>
+			</tr>
+			<tr>
+				<td>Reliability</td>
+				<td><%= @teach_end.reliable %></td>
+			</tr>
+			<tr>
+				<td>Relationship with Students</td>
+				<td><%= @teach_end.srelation %></td>
+			</tr>
+		</table>
+	</div>	
+	<div class="row">
+		<div class="large-12 columns">
+			<span class="ma_showl">Overall Performance: </span>
+			<p><%= @teach_end.overall_performance %></p>
+		</div>
+		<hr>
+	</div>
+		<div class="row">
+		<div class="large-12 columns">
+			<span class="ma_showl">Growth Shown: </span>
+			<p><%= @teach_end.grow %></p>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<span class="ma_showl">Comments on Other Madrichim</span>
+			<p><%= @teach_end.other_teens %></p>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<span class="ma_showl">Request for Next Year</span>
+			<p><%= @teach_end.request %></p>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<% if is_teacher? %>
+			<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+		<% elsif is_admin? %>
+			<%= link_to "Back to Madrich/a Page", teen_url(@teen), :class => "button" %>
+		<% else %>
+			<%= link_to "Whoops", login_url, :class => "button" %>
+		<% end %>
+	</div>
+</div>

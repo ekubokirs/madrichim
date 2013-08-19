@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="large-6 columns">
+		<div class="large-6 columns ma_greet">
 			<%= @teen.full_name %>
 		</div>
 		<div class="large-6 columns">
@@ -57,7 +57,7 @@
 			<tbody>
 				<% @form_end.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
+					<td> <%= link_to fn.id, teen_end_year_url(fn.id) %> </td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
@@ -73,7 +73,7 @@
 			<tbody>
 				<% @form_teach_end.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
+					<td> <%= link_to fn.id, teacher_end_year_url(fn.id) %> </td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
@@ -91,7 +91,7 @@
 			<tbody>
 				<% @form_new.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
+					<td> <%= link_to fn.id, teen_new_url(fn.id) %> </td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
@@ -107,7 +107,7 @@
 			<tbody>
 				<% @form_term.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
+					<td> <%= link_to fn.id, teen_term_url(fn.id) %> </td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
@@ -118,14 +118,14 @@
 		<table class = "large-6 columns">
 			<thead>
 				<tr>
-					<td>Incident Reports Involved In</td>
+					<td>Incidents Involved In</td>
 					<td>Time Stamp</td>
 				</tr>
 			</thead>
 			<tbody>
 				<% @incident.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
+					<td> <%= link_to fn.id, incident_url(fn.id) %> </td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
@@ -141,7 +141,7 @@
 			<tbody>
 				<% @incident_r.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
+					<td> <%= link_to fn.id, incident_url(fn.id) %> </td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
@@ -159,7 +159,7 @@
 			<tbody>
 				<% @interview.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id %> </td>
+					<td> <%= link_to fn.id, admin_interview_url(fn.id) %> </td>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>

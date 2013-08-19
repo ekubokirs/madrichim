@@ -1,0 +1,83 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row ma_greet">
+		<%= @teen.full_name %>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_showl">T-Shirt Size: </span>
+			<%= @teen_new.size %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_showl">School: </span>
+			<%= @teen_new.school %>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_showl">Grade: </span>
+			<%= @teen_new.grade %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Why would you like to join the madrichim program? </span>
+		<p><%= @teen_new.join %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">How do you hope to grow as a member of the madrichim program?</span>
+		<p><%= @teen_new.goal %>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">What Jewish activites are you involved in?</span>
+		<p><%= @teen_new.jact %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">What activities are you involved in outside of CTJ?</span>
+		<p><%= @teen_new.act %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Days</span>
+		<p><%= @teen_new.days %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_showl">Assignment Request:</span>
+			<p><%= @teen_new.assign %></p>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_showl">Requests: </span>
+			<p><%= @teen_new.request %></p>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Personal Description for Teacher:</span>
+		<p><%= @teen_new.desc %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<span class="ma_showl">Staff Youth Events?</span>
+		<p><%= @teen_new.youth %></p>
+		<hr>
+	</div>
+	<div class="row">
+		<% if is_teen? %>
+			<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+		<% elsif is_admin? %>
+			<%= link_to "Back to Madrich/a Page", teen_url(@teen), :class => "button" %>
+		<% else %>
+			<%= link_to "Whoops", login_url, :class => "button" %>
+		<% end %>
+	</div>
+</div>

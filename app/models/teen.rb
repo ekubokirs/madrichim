@@ -8,6 +8,8 @@ class Teen < User
   many	:teacher_mid_year
   many	:teacher_end_year
 
+  many  :incidents
+
   one		:teen_new
   one		:teen_term
 

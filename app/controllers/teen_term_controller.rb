@@ -7,17 +7,25 @@ def new
 
 	def create
 		@teen_term = TeenTerm.new term_params
-		@teen_term._id = current_user._id
+		@teen_term.teen_id = current_user.id
 		@teen_term.save
 
 		redirect_to root_url
 		flash[:notice] = "Application Saved!"
 	end
 
+	def show
+		@teen_term = TeenTerm.find(params[:id])
+		@teen = User.find(@teen_term.teen_id)
+		puts "*"*50
+		puts @teen
+	end
+
 	private
 
 	def term_params
 		params.require(:teen_term).permit(
+			:placement,
 			:leave,
 			:change,
 			:same,

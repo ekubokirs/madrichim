@@ -6,18 +6,19 @@
 	</div>
 	<%= form_for :teen_new, url: {action: "create"} do |f| %>
 		<div class="row">
-			<h2>Submitting Form As: <%= @user.first_name %> <%= @user.last_name %> </h2>
+			<span class="large-12 columns ma_open">Submitting Form As: <%= @user.first_name %> <%= @user.last_name %> </span>
+			<hr>
 		</div>
 		<div class="row">
 		  <div class="large-6 columns">
 				<%= f.label :size, "T-Shirt Size" %>
 				<%= f.select :size, options_for_select([
-				  ["Youth Large",               "YL"],
-				  ["Adult Small",               "AS"],
-				  ["Adult Medium",              "AM"],
-				  ["Adult Large",               "AL"],
-				  ["Adult Extra Large",         "AXL"],
-				  ["Adult Extra Extra Large",   "AXXL"]]) %>
+				  ["Youth Large"],
+				  ["Adult Small"],
+				  ["Adult Medium"],
+				  ["Adult Large"],
+				  ["Adult Extra Large"],
+				  ["Adult Extra Extra Large"]]) %>
 			</div>
 		</div>
 		<div class="row">
@@ -28,12 +29,12 @@
 			<div class="large-6 columns">
 				<%= f.label :grade, "Grade in the Fall" %>
 				<%= f.select :grade, options_for_select([
-					["Seventh Grade",		"7"],
-					["Eighth Grade", 		"8"],
-					["Freshman",				"9"],
-					["Sophomore",				"10"],
-					["Junior",					"11"],
-					["Senior",					"12"]
+					["Seventh Grade"],
+					["Eighth Grade"],
+					["Freshman"],
+					["Sophomore"],
+					["Junior"],
+					["Senior"]
 					])%>
 			</div>
 		</div>
@@ -87,6 +88,10 @@
 			<div class="row">
 				<%= f.text_field :request %>
 			</div>
+		</div>
+		<div class="row">
+			<%= f.label :desc, "In one paragraph, please describe yourself for the teacher you will be working with next year." %>
+			<%= f.text_area :desc %>
 		</div>
 		<div class="row">
 			<%= f.label :youth, "Would you like to staff youth events?" %>

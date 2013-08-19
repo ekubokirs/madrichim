@@ -3,11 +3,14 @@ class TeenTerm
 
   belongs_to :teen
 
-  key :leave,		String
-  key :change,	String
-  key :same,		String
-  key :grow,		String
-  key :learn,		String
-  key :life,		String
+  key	:placement,	String
+  key :leave,			String
+  key :change,		String
+  key :same,			String
+  key :grow,			String
+  key :learn,			String
+  key :life,			String
+
+  timestamps!
 
 end
