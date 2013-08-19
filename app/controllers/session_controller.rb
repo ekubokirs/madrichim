@@ -22,6 +22,7 @@ class SessionController < ApplicationController
 						session[:user_id] = @user._id
 						redirect_to root_url
 					else
+						redirect_to login_url
 						flash[:alert] = "Wrong E-mail or Password.  Please Try Again!"
 					end
 				end

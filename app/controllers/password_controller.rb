@@ -15,6 +15,7 @@ class PasswordController < ApplicationController
 			@user.update_attributes!(user_params)
 			@user.code = nil
 			@user.expires_at = nil
+			@user.save
 
 			if @user.save
 				session[:user_id] = @user.id

@@ -33,7 +33,7 @@
 			<thead>
 				<tr>
 					<td>Teacher Mid-Year</td>
-					<td>Teacher Name<td>
+					<td>Teacher Name</td>
 					<td>Time Stamp</td>
 				</tr>
 			</thead>
@@ -123,6 +123,7 @@
 			<thead>
 				<tr>
 					<td>Incidents Involved In</td>
+					<td>Reported By</td>
 					<td>Time Stamp</td>
 				</tr>
 			</thead>
@@ -130,6 +131,7 @@
 				<% @incident.each do |fn| %>
 				<tr>
 					<td> <%= link_to fn.id, incident_url(fn.id) %> </td>
+					<td> <%= fn.user.full_name %>
 					<td> <%= fn.updated_at %> </td>
 				</tr>
 				<% end %>
