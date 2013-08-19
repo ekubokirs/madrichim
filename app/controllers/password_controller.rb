@@ -1,5 +1,24 @@
 class PasswordController < ApplicationController
+	before_action :get_user
+	after_action	:clear_expired_codes
+
 	def edit
+	end
+
+	def update
+    if @user.update_attributes(user_params)
+      session[:user_id] = @user.id
+      redirect_to root_url 
+      flash[:notice] = "Your password has been changed."
+    else
+      flash[:alert] = "Password reset failed."
+      render new
+    end
+  end
+
+	private
+
+	def get_user
 		@user = User.find_by_code(params[:code])
 
 		unless @user and @user.expires_at > Time.new
@@ -8,37 +27,15 @@ class PasswordController < ApplicationController
 		end
 	end
 
-	def update
-		@user = User.find_by_code(params[:code])
-
-		if @user and @user.expires_at >Time.now
-			@user.update_attributes!(user_params)
-			@user.code = nil
-			@user.expires_at = nil
-			@user.save
-
-			if @user.save
-				session[:user_id] = @user.id
-				redirect_to root_url
-				flash[:notice] = "Password Changed!"
-			else
-				redirect_to login_url
-				flash[:alert] = "Reset link has expired.  Please try again."
-			end
-		else
-			redirect_to login_url
-			flash[:alert] = "Reset link has expired.  Please try again."
-		end
+	def clear_expired_codes
+		User.where(:expires_at.lt => Time.now)
+		.update(code: nil, expires_at: nil)
 	end
 
-	private
-
 	def user_params
-		params.permit(
+		params.require(:user).permit(
       :password,
-      :password_confirmation,
-      :code,
-      :expires_at
+      :password_confirmation
     )
 	end
 end

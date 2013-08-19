@@ -5,9 +5,13 @@
 		</div>
 	</div>
 	<div class="row ma_greet">
+		<%= @user.email %>
+	</div>
+	<div class="row ma_flashalert">
+		<%= flash.alert %>
 	</div>
 	<div class="row">
-		<%= form_for @user, url: reset_path, html: { autocomplete: :off } do |f| %>
+		<%= form_for :user, url: reset_path, method: :put, html: { autocomplete: :off } do |f| %>
 			<div class="large-6 columns">
 		    <p>
 			    <%= f.label :password %>
