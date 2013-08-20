@@ -8,8 +8,14 @@
 		<%= @teen.full_name %>
 	</div>
 	<div class="row">
-		<span class="ma_showl">Placement: </span>
-		<%= @teach_end.placement %>
+		<div class="large-6 columns">
+			<span class="ma_showl">Teacher: </span>
+			<%= @teach_end.teacher.full_name %>
+		</div>
+		<div class="large-6 columns">
+			<span class="large-6 columns ma_showl">Placement: </span>
+			<%= @teach_end.placement %>
+		</div>
 		<hr>
 	</div>
 	<div class="row">

@@ -1,9 +1,8 @@
 class TeacherMidYear
 	include MongoMapper::Document
 
-	belongs_to :teacher
-
-	belongs_to :teen
+	belongs_to	:user
+	belongs_to	:teen
 
 	key :placement,						String
 	key :aid,									String
@@ -15,5 +14,4 @@ class TeacherMidYear
 	key :other_teens,					String
 
 	timestamps!
-	
 end

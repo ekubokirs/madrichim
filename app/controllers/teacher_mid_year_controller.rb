@@ -7,7 +7,7 @@ class TeacherMidYearController < ApplicationController
 
 	def create
 		@teacherMY = TeacherMidYear.new mid_year_params
-		@teacherMY.teacher = current_user
+		@teacherMY.user = current_user
 		@teacherMY.save
 
 		redirect_to root_url

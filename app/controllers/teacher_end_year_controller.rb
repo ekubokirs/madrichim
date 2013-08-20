@@ -7,7 +7,7 @@ class TeacherEndYearController < ApplicationController
 
 	def create
 		@teacherEY = TeacherEndYear.new end_year_params
-		@teacherEY.teacher_id = current_user.id
+		@teacherEY.user = current_user
 		@teacherEY.save
 
 		redirect_to root_url

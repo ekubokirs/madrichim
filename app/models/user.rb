@@ -1,7 +1,9 @@
 class User
   include MongoMapper::Document
 
-  many :incidents
+  many  :incidents
+  many  :teacher_mid_years
+  many  :teacher_end_years
 
   key :first_name,  String, :required =>  true
   key :last_name,   String, :required =>  true
@@ -11,7 +13,7 @@ class User
   key :code,        String
   key :expires_at,  Time
 
-  before_save :encrypt_password
+  before_validation :encrypt_password
 
   attr_accessor :password, :password_confirmation
 

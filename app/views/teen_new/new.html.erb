@@ -55,7 +55,7 @@
 			<%= f.text_area :act %>
 		</div>
 		<div class="row">
-			<%= f.label :days %>
+			<%= f.label :days, "Days You Wish To Work" %>
 			<div class="large-4 columns">
 				<%= check_box_tag("teen_new[days][]", "Sunday") %>
 				<span class="ma_day">Sunday</span>
@@ -86,6 +86,7 @@
 				</div>
 			</div>
 			<div class="row">
+				<%= f.label :request, "Are there further details that you wish to provide about your request?" %>
 				<%= f.text_field :request %>
 			</div>
 		</div>
