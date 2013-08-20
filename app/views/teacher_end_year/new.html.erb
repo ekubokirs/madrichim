@@ -60,7 +60,8 @@
 					["Adequate"],
 					["Excellent"]]) %>
 				<%= f.label :srelation, "Relationship with Students:" %>
-				<%["Poor"],
+				<%= f.select :srelation, options_for_select([
+					["Poor"],
 					["Insufficient"],
 					["Adequate"],
 					["Excellent"]]) %>
@@ -75,7 +76,7 @@
 			<%= f.text_area :grow %>
 		</div>
 		<div class="row">
-				<%= f.label :other_teens, "Please comment on the performace of any other madrichim other than those assigned to you." %>
+				<%= f.label :other_teens, "Please comment on the performance of any other madrichim other than those assigned to you." %>
 			<%= f.text_area :other_teens %>
 		</div>
 		<div class="row">

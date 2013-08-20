@@ -13,6 +13,7 @@ Madrichim::Application.routes.draw do
   resources :teen_end_year
   resources :teen_term
   
+  resources :users
   # Registration
   get  'register/:code' => "registration#new", as: :register
   post 'register/:code' => "registration#create"

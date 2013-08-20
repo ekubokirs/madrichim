@@ -29,7 +29,6 @@ class RegistrationController < ApplicationController
 			render :new
 		end
 	end
-	
 
 	private
 
@@ -52,10 +51,8 @@ class RegistrationController < ApplicationController
   		:last_name,
   		:email,
 			:born_on,
-		  :zipcode,
 		  :home_phone,
 		  :cell_phone,
-		  :size,
 		  :password,
 		  :password_confirmation
 		)

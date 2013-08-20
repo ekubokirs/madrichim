@@ -1,0 +1,38 @@
+Teen
+<div id="ma_teen_update_form">
+	<%= form_for @teen, url: user_path(@teen) do |f| %>
+		<div class="row">
+			<p class="large-6 columns">
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name %>
+			</p>
+			<p class="large-6 columns">
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name %>
+			</p>
+		</div>
+		<div class="row">
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+		</div>
+		<div class="row">
+     <p class="large-6 columns">
+        <%= f.label :home_phone %>
+        <%= f.telephone_field :home_phone %>
+      </p>
+       <p class="large-6 columns">
+        <%= f.label :cell_phone %>
+        <%= f.telephone_field :cell_phone %>
+      </p>
+      <p class="large-6 columns">
+        <%= f.label :birthday %>
+        <%= f.date_field :born_on %>
+      </p>
+		</div>
+		<div class="row">
+			<p>
+				<%= f.submit "Submit Madrich/a", :class => "small button" %>
+			</p>
+		</div>
+	<% end %>
+</div>

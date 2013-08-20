@@ -1,0 +1,24 @@
+Teacher
+<div id="ma_teacher_update_form">
+	<%= form_for @teacher, url: user_path(@teacher) do |f| %>
+  	<div class="row">
+			<p class="large-6 columns">
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name %>
+			</p>
+			<p class="large-6 columns">
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name %>
+			</p>
+		</div>
+		<div class="row">
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+		</div>
+		<div class="row">
+			<p>
+				<%= f.submit :class => "small button" %>
+			</p>
+		</div>
+	<% end %>
+</div>

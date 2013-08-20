@@ -14,8 +14,6 @@ class Teen < User
   one		:teen_term
 
 	key :born_on,			Date
-	key :zipcode,			Integer
 	key :home_phone,	String
 	key :cell_phone,	String
-	key :size,				String
 end
