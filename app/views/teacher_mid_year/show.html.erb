@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="large-6 columns">
 			<span class="ma_showl">Teacher: </span>
-			<%= @teach_mid.teacher.full_name %>
+			<%= @teach_mid.user.full_name %>
 		</div>
 		<div class="large-6 columns">
 			<span class="large-6 columns ma_showl">Placement: </span>
@@ -52,7 +52,7 @@
 	</div>
 	<div class="row">
 		<div class="large-12 columns">
-			<span class="ma_showl">Comments on Other Madrichim</span>
+			<span class="ma_showl">Comments on Other Madrichim: </span>
 			<p><%= @teach_mid.other_teens %></p>
 		</div>
 		<hr>
