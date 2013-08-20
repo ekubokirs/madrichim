@@ -7,6 +7,7 @@ Madrichim::Application.routes.draw do
   resources :teacher_end_year
   
   resources :teen
+  resources :teacher
 
   resources :teen_new
   resources :teen_mid_year

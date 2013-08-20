@@ -1,0 +1,30 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<div class="row">
+  	<table class = "large-12 columns">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+					<td>E-mail</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @teacher.each do |fn| %>
+				<tr>
+					<td> <%= fn.id %> </td>
+					<td> <%= fn.full_name %> </td>
+					<td> <%= fn._type %> </td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+  </div>
+  <div class="row">
+  	<%= link_to "Back to Dashboard", root_url, :class => "button" %>
+  </div>
+</div>

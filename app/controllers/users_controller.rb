@@ -54,15 +54,15 @@ class UsersController < ApplicationController
 	private
 
 	def admin_params
-		params.permit(:first_name, :last_name, :email)
+		params.require(:admin).permit(:first_name, :last_name, :email)
 	end
 
 	def teacher_params
-		params.permit(:first_name, :last_name, :email)
+		params.require(:teacher).permit(:first_name, :last_name, :email)
 	end
 
 	def teen_params
-		params.permit(:first_name, :last_name, :email, :born_on, :home_phone, :cell_phone)
+		params.require(:teen).permit(:first_name, :last_name, :email, :born_on, :home_phone, :cell_phone)
 	end
 
 end
