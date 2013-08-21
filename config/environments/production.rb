@@ -69,7 +69,7 @@ Madrichim::Application.configure do
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'ctjmb.org',
-      user_name:            'emilia',
+      user_name:            'emilia@ctjmb.org',
       password:             '2404john',
       authentication:       'plain',
       enable_starttls_auto: true
