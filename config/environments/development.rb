@@ -13,14 +13,6 @@ Madrichim::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.smtp_settings = { 
-  #   :address => "smtp.mandrillapp.com", 
-  #   :port => 587,
-  #   :user_name => "ekubokirs@gmail.com",
-  #   :password => "iriD38Lx1JGraw-cS_0ZIw"
-  # }
 
   # Don't care if the mailer can't send.
   # config.action_mailer.raise_delivery_errors = false
