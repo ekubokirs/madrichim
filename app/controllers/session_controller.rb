@@ -32,7 +32,8 @@ class SessionController < ApplicationController
 
         PasswordMailer.registration_email(@registrant).deliver
 
-        redirect_to login_url, alert: "A Registration E-mail Has Been Sent!"
+        redirect_to login_url
+        flash[:alert] = "A Registration E-mail Has Been Sent!"
       end
     end
   end
