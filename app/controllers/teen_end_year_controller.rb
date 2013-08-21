@@ -1,4 +1,5 @@
 class TeenEndYearController < ApplicationController
+  before_action :is_authenticated
 	def new
 		@user = current_user
 		@teen_end = TeenEndYear.new

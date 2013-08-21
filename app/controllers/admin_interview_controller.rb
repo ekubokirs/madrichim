@@ -1,5 +1,5 @@
 class AdminInterviewController < ApplicationController
-
+before_action :is_authenticated
 	def new
 		@user = current_user
 		@adminInterview = AdminInterview.new

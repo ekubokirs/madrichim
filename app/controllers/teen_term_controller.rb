@@ -1,6 +1,6 @@
 class TeenTermController < ApplicationController
-
-def new
+  before_action :is_authenticated
+  def new
 		@user = current_user
 		@teen_term = TeenTerm.new
 	end

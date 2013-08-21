@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	before_action :is_admin?
+	before_action :is_authenticated
+  before_action :is_admin?
 	def index
 		@user 		= User.all
 		@teens 		= User.where(_type: "Teen").all

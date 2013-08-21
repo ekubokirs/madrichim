@@ -1,4 +1,5 @@
 class TeenController < ApplicationController
+  before_action :is_authenticated
  def index
  	@teens = User.where(_type: "Teen").all
  end
