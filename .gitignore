@@ -14,3 +14,6 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
+/config/mongo.yml
+/config/environments/production.rb
