@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 	before_action :is_authenticated
   before_action :is_admin?
 	def index
-		@user 		= User.all
+		@user 		= User.sort(:first_name.asc).all
 		@teens 		= User.where(_type: "Teen").all
 		@teachers = User.where(_type: "Teacher").all
 		@admins 	= User.where(_type: "Admin").all
