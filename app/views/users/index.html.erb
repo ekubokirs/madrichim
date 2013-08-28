@@ -16,9 +16,10 @@
 			<tbody>
 				<% @user.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, edit_user_url(fn.id) %> </td>
 					<td> <%= fn.full_name %> </td>
 					<td> <%= fn._type %> </td>
+					<td> <%= link_to "Edit", edit_user_url(fn.id) %> </td>
+					<td> <%= link_to "Delete", fn, method: :delete %></td>
 				</tr>
 				<% end %>
 			</tbody>
