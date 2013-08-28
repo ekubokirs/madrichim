@@ -1,7 +1,9 @@
 <div class="row">
 	<nav class="top-bar">
 		<ul class="title-area">
-			<li class="name"></li>
+			<li class="name">
+				<h1 class="ma_topbar"><%= @user.full_name %></h1>
+			</li>
 			<li class="toggle-topbar menu-icon">
 				<a href="#">
 					<span>Menu</span>
@@ -9,10 +11,6 @@
 			</li>
 		</ul>
 		<section class="top-bar-section">
-			<ul class="left">
-				<li class="ma_topbar"><%= @user.full_name %> </li>
-				<li class="divider"></li>
-			</ul>
 			<ul class="right">
 				<li>
 					<%= link_to "Incident Report", new_incident_url %>
