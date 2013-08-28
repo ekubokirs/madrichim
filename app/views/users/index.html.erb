@@ -8,9 +8,10 @@
   	<table class = "large-12 columns">
 			<thead>
 				<tr>
-					<td>ID</td>
 					<td>Name</td>
 					<td>Type</td>
+					<td>Edit</td>
+					<td>Delete</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -19,7 +20,7 @@
 					<td> <%= fn.full_name %> </td>
 					<td> <%= fn._type %> </td>
 					<td> <%= link_to "Edit", edit_user_url(fn.id) %> </td>
-					<td> <%= link_to "Delete", fn, method: :delete %></td>
+					<td> <%= link_to "Delete", user_url(fn.id), method: :delete %></td>
 				</tr>
 				<% end %>
 			</tbody>
