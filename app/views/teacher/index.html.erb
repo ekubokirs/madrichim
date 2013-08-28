@@ -8,7 +8,6 @@
   	<table class = "large-12 columns">
 			<thead>
 				<tr>
-					<td>ID</td>
 					<td>Name</td>
 					<td>E-mail</td>
 				</tr>
@@ -16,7 +15,6 @@
 			<tbody>
 				<% @teacher.each do |fn| %>
 				<tr>
-					<td> <%= fn.id %> </td>
 					<td> <%= fn.full_name %> </td>
 					<td> <%= fn.email %> </td>
 				</tr>

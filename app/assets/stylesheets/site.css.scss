@@ -1,8 +1,8 @@
 .ma_back{
 	background-color: #fff;
 	border: solid 3px #d2c683;
-	margin:15px;
-	padding: 5px;
+	margin:5%;
+	padding: 1%;
 	border-radius: 25px;
 }
 .ma_head{
@@ -93,4 +93,7 @@
 .ma_format{
 	color: #071a49;
 	font-family: 'Jacques Francois', serif;
+}
+#ma_teacher_reg_form{
+	display: none
 }
