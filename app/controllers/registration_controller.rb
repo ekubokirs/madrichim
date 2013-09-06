@@ -11,6 +11,9 @@ class RegistrationController < ApplicationController
 	def create
 		if params[:teen]
 			@user = Teen.new(teen_params)
+			puts "==="*30
+			puts params[:teen][:home_phone]
+			puts params[:teen][:cell_phone]
 		elsif params[:teacher]
 			@user = Teacher.new(teacher_params)
 		else

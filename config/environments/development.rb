@@ -18,7 +18,7 @@ Madrichim::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
   # change to port 1025 for mailcatcher, 25 for smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 25 }
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
   
   config.action_mailer.default_url_options = { :host => 'localhost', :port => 3000 }
 

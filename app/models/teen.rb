@@ -25,6 +25,12 @@ class Teen < User
   def unformat_phone_numbers
     self.home_phone = home_phone.gsub(/\D/, '') if home_phone
     self.cell_phone = cell_phone.gsub(/\D/, '') if cell_phone
+    if home_phone.length > 10
+      self.home_phone = home_phone[-10..-1]
+    end
+    if cell_phone.length > 10
+      self.cell_phone = cell_phone[-10..-1]
+    end
   end
 
   def format_phone_numbers
