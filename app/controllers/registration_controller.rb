@@ -12,6 +12,7 @@ class RegistrationController < ApplicationController
 		if params[:teen]
 			@user = Teen.new(teen_params)
 			puts "==="*30
+			puts params[:teen][:email]
 			puts params[:teen][:home_phone]
 			puts params[:teen][:cell_phone]
 		elsif params[:teacher]
