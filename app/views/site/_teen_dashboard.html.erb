@@ -12,43 +12,27 @@
 		</ul>
 		<section class="top-bar-section">
 			<ul class="right">
-				<li>
-					<%= link_to "Incident Report", new_incident_url %>
-				</li>
+				<li><%= link_to "Incident Report", new_incident_url %></li>
 				<li class="divider"></li>
 				<li class="has-dropdown">
 					<a href="#">Forms</a>
 					<ul class="dropdown">
-						<li>
-							<%= link_to "New Madrich/a Application", new_teen_new_url %>
-						</li>
-						<li>
-							<%= link_to "Mid-Year Form", new_teen_mid_year_url  %>
-						</li>
-						<li>
-							<%= link_to "Returning Application", new_teen_end_year_url %>
-						</li>
-						<li>
-							<%= link_to "Not Returning Form", new_teen_term_url %>
-						</li>
+						<li><%= link_to "New Madrich/a Application", new_teen_new_url %></li>
+						<li><%= link_to "Mid-Year Form", new_teen_mid_year_url  %></li>
+						<li><%= link_to "Returning Application", new_teen_end_year_url %></li>
+						<li><%= link_to "Not Returning Form", new_teen_term_url %></li>
 					</ul>
 				</li>
 				<li class="divider"></li>
 				<li class="has-dropdown">
 					<a href="#">References</a>
 					<ul class="dropdown">
-						<li>
-							<%= link_to "Dress Code", dresscode_url %>
-						</li>
-						<li>
-							<%= link_to "Program Format Outline", lesson_url  %>
-						</li>
+						<li><%= link_to "Dress Code", dresscode_url %></li>
+						<li><%= link_to "Program Format Outline", lesson_url  %></li>
 					</ul>
 				</li>
 				<li class="divider"></li>
-				<li>
-					<%= link_to "Log Out", logout_url %>
-				</li>
+				<li><%= link_to "Log Out", logout_url %></li>
 			</ul>
 		</section>
 	</nav>
@@ -72,8 +56,8 @@
 		<tbody>
 			<% @form_mid.each do |fn| %>
 			<tr>
-				<td> <%= link_to fn.id, teen_mid_year_url(fn.id) %> </td>
-				<td> <%= fn.updated_at %> </td>
+				<td><%= link_to fn.id, teen_mid_year_url(fn.id) %></td>
+				<td><%= fn.updated_at %></td>
 			</tr>
 			<% end %>
 		</tbody>
@@ -88,8 +72,8 @@
 		<tbody>
 			<% @form_end.each do |fn| %>
 			<tr>
-				<td> <%= link_to fn.id, teen_end_year_url(fn.id) %> </td>
-				<td> <%= fn.updated_at %> </td>
+				<td><%= link_to fn.id, teen_end_year_url(fn.id) %></td>
+				<td><%= fn.updated_at %></td>
 			</tr>
 			<% end %>
 		</tbody>
@@ -106,8 +90,8 @@
 		<tbody>
 			<% @form_new.each do |fn| %>
 			<tr>
-				<td> <%= link_to fn.id, teen_new_url(fn.id) %> </td>
-				<td> <%= fn.updated_at %> </td>
+				<td><%= link_to fn.id, teen_new_url(fn.id) %></td>
+				<td><%= fn.updated_at %></td>
 			</tr>
 			<% end %>
 		</tbody>
@@ -122,8 +106,8 @@
 		<tbody>
 			<% @form_term.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, teen_term_url(fn.id) %> </td>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, teen_term_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 		</tbody>
@@ -140,8 +124,8 @@
 		<tbody>
 			<% @incident.each do |fn| %>
 			<tr>
-				<td> <%= link_to fn.id, incident_url(fn.id) %> </td>
-				<td> <%= fn.updated_at %> </td>
+				<td><%= link_to fn.id, incident_url(fn.id) %></td>
+				<td><%= fn.updated_at %></td>
 			</tr>
 			<% end %>
 		</tbody>

@@ -11,12 +11,12 @@ class RegistrationController < ApplicationController
 	def create
 		if params[:teen]
 			@user = Teen.new(teen_params)
-			puts "==="*30
-			puts params[:teen][:email]
-			puts params[:teen][:home_phone]
-			puts params[:teen][:cell_phone]
+			puts "==="*50
+			puts teen_params
 		elsif params[:teacher]
 			@user = Teacher.new(teacher_params)
+			puts "==="*50
+			puts teacher_params
 		else
 			redirect_to login_url
 			flash[:alert] = "You must be a Teacher or a Madrich/a!"

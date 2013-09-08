@@ -1,5 +1,10 @@
 class IncidentsController <ApplicationController
   before_action :is_authenticated
+	
+	def index
+		@incidents = Incidents.all
+	end
+
 	def new
 		@user = current_user
 		@incident = Incident.new

@@ -1,0 +1,27 @@
+<div class="ma_back">	
+	<div class="row">
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
+		</div>
+	</div>
+	<table class = "large-6 columns">
+		<thead>
+			<tr>
+				<td>Incidents Involved In</td>
+				<td>Reported By</td>
+				<td>Teens Involved</td>
+				<td>Time Stamp</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @incident.each do |fn| %>
+			<tr>
+				<td><%= link_to fn.id, incident_url(fn.id) %></td>
+				<td><%= fn.user.full_name %></td>
+				<td><%= fn.part_names %></td>
+				<td><%= fn.updated_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

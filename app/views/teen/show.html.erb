@@ -23,8 +23,8 @@
 			<tbody>
 				<% @form_mid.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, teen_mid_year_url(fn.id) %> </td>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, teen_mid_year_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 			</tbody>
@@ -40,9 +40,9 @@
 			<tbody>
 				<% @form_teach_mid.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, teacher_mid_year_url(fn.id) %> </td>
-					<td> <%= fn.user.full_name %></td>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, teacher_mid_year_url(fn.id) %></td>
+					<td><%= fn.user.full_name %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 			</tbody>
@@ -59,8 +59,8 @@
 			<tbody>
 				<% @form_end.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, teen_end_year_url(fn.id) %> </td>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, teen_end_year_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 			</tbody>
@@ -76,9 +76,9 @@
 			<tbody>
 				<% @form_teach_end.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, teacher_end_year_url(fn.id) %> </td>
-					<td> <%= fn.user.full_name %></td>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, teacher_end_year_url(fn.id) %></td>
+					<td><%= fn.user.full_name %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 			</tbody>
@@ -111,8 +111,8 @@
 			<tbody>
 				<% @form_term.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, teen_term_url(fn.id) %> </td>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, teen_term_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 			</tbody>
@@ -130,9 +130,9 @@
 			<tbody>
 				<% @incident.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, incident_url(fn.id) %> </td>
-					<td> <%= fn.user.full_name %>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, incident_url(fn.id) %></td>
+					<td><%= fn.user.full_name %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 			</tbody>
@@ -147,8 +147,8 @@
 			<tbody>
 				<% @incident_r.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, incident_url(fn.id) %> </td>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, incident_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 			</tbody>
@@ -165,8 +165,8 @@
 			<tbody>
 				<% @interview.each do |fn| %>
 				<tr>
-					<td> <%= link_to fn.id, admin_interview_url(fn.id) %> </td>
-					<td> <%= fn.updated_at %> </td>
+					<td><%= link_to fn.id, admin_interview_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
 			</tbody>
