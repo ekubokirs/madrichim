@@ -2,7 +2,7 @@ class IncidentsController <ApplicationController
   before_action :is_authenticated
 	
 	def index
-		@incidents = Incidents.all
+		@incidents = Incident.all
 	end
 
 	def new

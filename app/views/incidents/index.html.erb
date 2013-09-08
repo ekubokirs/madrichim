@@ -4,7 +4,7 @@
 			<h1 class="ma_title">CTJ<br>Madrichim</h1>
 		</div>
 	</div>
-	<table class = "large-6 columns">
+	<table class="row">
 		<thead>
 			<tr>
 				<td>Incidents Involved In</td>
@@ -14,7 +14,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% @incident.each do |fn| %>
+			<% @incidents.each do |fn| %>
 			<tr>
 				<td><%= link_to fn.id, incident_url(fn.id) %></td>
 				<td><%= fn.user.full_name %></td>
