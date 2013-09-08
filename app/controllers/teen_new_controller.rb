@@ -1,5 +1,9 @@
 class TeenNewController < ApplicationController
   before_action :is_authenticated
+	def index
+		@teen_new = TeenNew.all
+	end
+
 	def new
 		@user = current_user
 		@teen_new = TeenNew.new

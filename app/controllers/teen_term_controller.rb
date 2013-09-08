@@ -1,5 +1,9 @@
 class TeenTermController < ApplicationController
   before_action :is_authenticated
+  def index
+  	@teen_term = TeenTerm.all
+  end
+
   def new
 		@user = current_user
 		@teen_term = TeenTerm.new
@@ -17,8 +21,6 @@ class TeenTermController < ApplicationController
 	def show
 		@teen_term = TeenTerm.find(params[:id])
 		@teen = User.find(@teen_term.teen_id)
-		puts "*"*50
-		puts @teen
 	end
 
 	private

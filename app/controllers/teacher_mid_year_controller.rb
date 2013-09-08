@@ -1,5 +1,9 @@
 class TeacherMidYearController < ApplicationController
   before_action :is_authenticated
+	def index
+		@teacherMY= TeacherMidYear.all
+	end
+
 	def new
 		@user = current_user
 		@teacherMY = TeacherMidYear.new
