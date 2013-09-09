@@ -2,6 +2,7 @@ class TeacherEndYearController < ApplicationController
   before_action :is_authenticated
 	def index
 		@teachEY = TeacherEndYear.all
+		@user 		= current_user
 	end
 
 	def new

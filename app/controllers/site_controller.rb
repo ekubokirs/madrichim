@@ -4,7 +4,7 @@ class SiteController < ApplicationController
 	def index
 		@user 		= current_user
 		@teens  	= User.where(_type: "Teen").sort(:last_name.asc).all
-		@teachers = User.where(_type: "Teacher").all
+		@teachers = User.where(_type: "Teacher").sort(:last_name.asc).all
 
 		if is_teen?
 			@dashboard 	= "teen_dashboard"

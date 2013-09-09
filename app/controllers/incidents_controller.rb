@@ -3,6 +3,7 @@ class IncidentsController <ApplicationController
 	
 	def index
 		@incidents = Incident.all
+		@user 		= current_user
 	end
 
 	def new

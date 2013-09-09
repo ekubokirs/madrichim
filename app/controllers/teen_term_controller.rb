@@ -2,6 +2,7 @@ class TeenTermController < ApplicationController
   before_action :is_authenticated
   def index
   	@teen_term = TeenTerm.all
+  	@user 		= current_user
   end
 
   def new
