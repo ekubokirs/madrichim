@@ -5,6 +5,7 @@ class TeenController < ApplicationController
  end
 
  def show
+ 	@user = current_user
  	@teens = User.where(_type: "Teen").all
  	
  	@teen = Teen.find(params[:id])
