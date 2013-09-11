@@ -25,6 +25,25 @@ class TeacherEndYearController < ApplicationController
 		@teen = User.find(@teach_end.teen_id)
 	end
 
+	def edit
+		@teach_end = TeacherEndYear.find(params[:id])
+	end
+
+	def update
+		@teach_end = TeacherEndYear.find(params[:id])
+		@teach_end.update_attributes(end_year_params)
+		redirect_to teacher_end_year_index_url
+		flash[:notice] = "Evaluation Updated"
+	end
+
+	def destroy
+		teach_end = TeacherEndYear.find(params[:id])
+		teach_end.destroy
+
+		redirect_to teacher_end_year_index_url
+		flash[:notice] = "Evaluation Updated"
+	end
+
 	private
 
 	def end_year_params

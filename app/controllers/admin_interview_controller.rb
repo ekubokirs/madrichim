@@ -25,6 +25,25 @@ before_action :is_authenticated
 		@teen = User.find(@interview.teen_id)
 	end
 
+	def edit
+		@interview = AdminInterview.find(params[:id])
+	end
+
+	def update
+		@interview = AdminInterview.find(params[:id])
+		@interview.update_attributes(interview_params)
+		redirect_to admin_interview_index_url
+		flash[:notice] = "Interview Updated"
+	end
+
+	def destroy
+		interview = AdminInterview.find(params[:id])
+		interview.destroy
+
+		redirect_to admin_interview_index_url
+		flash[:notice] = "Interview Deleted"
+	end
+
 	private
 
 	def interview_params

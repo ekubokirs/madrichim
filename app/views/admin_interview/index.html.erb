@@ -58,6 +58,9 @@
 			</section>
 		</nav>
 	</div>
+	<div class="row ma_flashalert">
+		<%= flash.notice %>
+	</div>
 	<div class="row">
 		<%= link_to "Back To Dashboard", root_url, :class => "button" %>
 	</div>
@@ -67,6 +70,8 @@
 				<td>Interview Comments</td>
 				<td>Name</td>
 				<td>Time Stamp</td>
+				<td>Edit</td>
+				<td>Delete</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -76,6 +81,8 @@
 				<td><%= fn.admin.full_name %></td>
 				<td><%= fn.teen.full_name %></td>
 				<td><%= fn.updated_at %></td>
+				<td><%= link_to "Edit", edit_admin_interview_url %></td>
+				<td><%= link_to "Delete", admin_interview_url(fn.id), method: :delete %></td>
 			</tr>
 			<% end %>
 		</tbody>

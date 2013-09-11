@@ -42,6 +42,8 @@ class RegistrationController < ApplicationController
 
 	def get_registrant
 		@registrant = Registrant.find_by_code params[:code]
+		puts "*"*50
+		puts @registrant
 		unless @registrant
 			Registrant.where(:expires_at.lt => Time.now)
 			redirect_to login_url

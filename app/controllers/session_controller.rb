@@ -29,6 +29,8 @@ class SessionController < ApplicationController
       else
         @registrant = Registrant.new(email: params[:email])
         @registrant.save
+        puts "*"*50
+        puts @registrant
 
         PasswordMailer.registration_email(@registrant).deliver
 

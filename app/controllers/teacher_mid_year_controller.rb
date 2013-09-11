@@ -25,6 +25,14 @@ class TeacherMidYearController < ApplicationController
 		@teen = User.find(@teach_mid.teen_id)
 	end
 
+	def edit
+	end
+
+	def update
+	end
+
+	def destroy
+	end
 
 	private
 

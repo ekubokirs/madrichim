@@ -24,6 +24,15 @@ class TeenEndYearController < ApplicationController
 		@teen = Teen.find(@teen_end.teen_id)
 	end
 
+	def edit
+	end
+
+	def update
+	end
+
+	def destroy
+	end
+	
 	private
 
 	def end_params

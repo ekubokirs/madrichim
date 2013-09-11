@@ -26,6 +26,25 @@ class IncidentsController <ApplicationController
 		@user = User.find(@incident.user_id)
 	end
 
+	def edit
+		@incident = Incident.find(params[:id])
+	end
+
+	def update
+		@incident = Incident.find(params[:id])
+		@incident.update_attributes(incident_params)
+		redirect_to incidents_url
+		flash[:notice] = "Incident Updated"
+	end
+
+	def destroy
+		incident=Incident.find(params[:id])
+		incident.destroy
+
+		redirect_to incidents_url
+		flash[:notice] = "Incident Deleted"
+	end
+
 	private
 
 	def incident_params

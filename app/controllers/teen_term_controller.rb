@@ -24,6 +24,15 @@ class TeenTermController < ApplicationController
 		@teen = User.find(@teen_term.teen_id)
 	end
 
+	def edit
+	end
+
+	def update
+	end
+
+	def destroy
+	end
+
 	private
 
 	def term_params

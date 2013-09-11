@@ -25,6 +25,15 @@ class TeenNewController < ApplicationController
 		puts "*"*50
 		puts @teen
 	end
+	
+	def edit
+	end
+
+	def update
+	end
+
+	def destroy
+	end
 
 	private
 

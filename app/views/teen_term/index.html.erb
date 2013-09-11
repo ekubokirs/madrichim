@@ -58,6 +58,9 @@
 			</section>
 		</nav>
 	</div>
+	<div class="row ma_flashalert">
+		<%= flash.notice %>
+	</div>
 	<div class="row">
 		<%= link_to "Back To Dashboard", root_url, :class => "button" %>
 	</div>
@@ -67,6 +70,8 @@
 				<td>Non-Returning</td>
 				<td>Name</td>
 				<td>Time Stamp</td>
+				<td>Edit</td>
+				<td>Delete</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -75,6 +80,8 @@
 				<td><%= link_to fn.id, teen_term_url(fn.id) %></td>
 				<td><%= fn.teen.full_name %></td>
 				<td><%= fn.updated_at %></td>
+				<td><%= link_to "Edit", edit_teen_term_url %></td>
+				<td><%= link_to "Delete", teen_term_url(fn.id), method: :delete %></td>
 			</tr>
 			<% end %>
 		</tbody>

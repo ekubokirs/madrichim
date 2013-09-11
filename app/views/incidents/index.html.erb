@@ -4,6 +4,9 @@
 			<h1 class="ma_title">CTJ<br>Madrichim</h1>
 		</div>
 	</div>
+	<div class="row ma_flashalert">
+		<%= flash.notice %>
+	</div>
 	<div class="row">
 		<%= link_to "Back To Dashboard", root_url, :class => "button" %>
 	</div>
@@ -14,6 +17,8 @@
 				<td>Reported By</td>
 				<td>Teens Involved</td>
 				<td>Time Stamp</td>
+				<td>Edit</td>
+				<td>Delete</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,6 +28,8 @@
 				<td><%= fn.user.full_name %></td>
 				<td><%= fn.part_names %></td>
 				<td><%= fn.updated_at %></td>
+				<td><%= link_to "Edit", edit_incident_url %></td>
+				<td><%= link_to "Delete", incident_url(fn.id), method: :delete %></td>
 			</tr>
 			<% end %>
 		</tbody>
