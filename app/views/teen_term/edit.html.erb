@@ -51,5 +51,56 @@
 	</section>
 </nav>
 <div class="ma_back">	
-	
+	<%= form_for @teen_term do |f| %>
+		<div class="row">
+			<span class="large-12 columns ma_open">Madrich/a Name: <%= @teen.full_name %></span>
+			<hr>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<%= f.label :placement, "Assignment" %>
+				<%= f.select :placement, options_for_select([
+					["Kindergarten"],
+					["First Grade"],
+					["Second Grade"],
+					["Third Grade"],
+					["Fourth Grade"],
+					["Fifth Grade"],
+					["Cooking"],
+					["Sports"],
+					["Art"],
+					["Drama"],
+					["Music"],
+					["Office"]]) %>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.label :leave, "Why are you choosing not to return?" %>
+			<%= f.text_field :leave %>
+		</div>
+		<div class="row">
+			<%= f.label :change, "What would you change about this year for the program?" %>
+			<%= f.text_area :change %>
+		</div>
+		<div class="row">
+			<%= f.label :same, "What would you keep the same for the program?" %>
+			<%= f.text_area :same %>
+		</div>
+		<div class="row">
+			<%= f.label :grow, "What do you think you learned/How do you think you grew this year?" %>
+			<%= f.text_area :grow %>
+		</div>
+		<div class="row">
+			<%= f.label :learn, "What do you think you was the most valuable thing you gained from being part of the madrichim program?" %>
+			<%= f.text_area :learn %>
+		</div>
+		<div class="row">
+			<%= f.label :life, "How has being a part of the madrichim program impacted you?" %>
+			<%= f.text_area :life %>
+		</div>
+		<div class="row">
+			<%= f.submit "Submit", :class => "button" %>
+			<%= link_to "Cancel", root_url, :class => "button" %>
+		</div>
+	<% end %>
 </div>	

@@ -51,6 +51,109 @@
 	</section>
 </nav>
 <div class="ma_back">
-	
-	
+	<%= form_for @teen_new, url: {action: "update"} do |f| %>
+		<div class="row">
+			<span class="large-12 columns ma_open">Madrich/a Name: <%= @teen.full_name %> </span>
+			<hr>
+		</div>
+		<div class="row">
+		  <div class="large-6 columns">
+				<%= f.label :size, "T-Shirt Size" %>
+				<%= f.select :size, options_for_select([
+				  ["Youth Large"],
+				  ["Adult Small"],
+				  ["Adult Medium"],
+				  ["Adult Large"],
+				  ["Adult Extra Large"],
+				  ["Adult Extra Extra Large"]]) %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<%= f.label :school, "School in the Fall" %>
+				<%= f.text_field :school %>
+			</div>
+			<div class="large-6 columns">
+				<%= f.label :grade, "Grade in the Fall" %>
+				<%= f.select :grade, options_for_select([
+					["Seventh Grade"],
+					["Eighth Grade"],
+					["Freshman"],
+					["Sophomore"],
+					["Junior"],
+					["Senior"]
+					])%>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.label :join, "Why would you like to join the madrichim program?" %>
+			<%= f.text_area :join %>
+		</div>
+		<div class="row">
+			<%= f.label :goal, "How do you hope to grow as a member of the madrichim program?" %>
+			<%= f.text_area :goal %>
+		</div>
+		<div class="row">
+			<%= f.label :jact, "What Jewish activites are you involved in?" %>
+			<%= f.text_area :jact %>
+		</div>
+		<div class="row">
+			<%= f.label :act, "What activities are you involved in outside of CTJ?" %>
+			<%= f.text_area :act %>
+		</div>
+		<div class="row">
+			<%= f.label :days, "Days You Wish To Work" %>
+			<div class="large-4 columns">
+				<%= check_box_tag("teen_new[days][]", "Sunday") %>
+				<span class="ma_day">Sunday</span>
+			</div>
+			<div class="large-4 columns">
+				<%= check_box_tag("teen_new[days][]", "Tuesday") %>
+				<span class="ma_day">Tuesday</span>
+			</div>
+			<div class="large-4 columns">
+				<%= check_box_tag("teen_new[days][]", "Wednesday") %>
+				<span class="ma_day">Wednesday</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="row">
+				<%= f.label :assign, "Request for Assignment" %>
+				<div class="large-4 columns">
+					<%= check_box_tag("teen_new[assign][]", "Classroom") %>
+					<span class="ma_assign">Classroom</span>
+				</div>
+				<div class="large-4 columns">
+					<%= check_box_tag("teen_new[assign][]", "Chug") %>
+					<span class="ma_assign">Chug</span>
+				</div>
+				<div class="large-4 columns">
+					<%= check_box_tag("teen_new[assign][]", "Office") %>
+					<span class="ma_assign">Office</span>
+				</div>
+			</div>
+			<div class="row">
+				<%= f.label :request, "Are there further details that you wish to provide about your request?" %>
+				<%= f.text_field :request %>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.label :desc, "In one paragraph, please describe yourself for the teacher you will be working with next year." %>
+			<%= f.text_area :desc %>
+		</div>
+		<div class="row">
+			<%= f.label :youth, "Would you like to staff youth events?" %>
+			<%= f.radio_button(:youth, "Yes") %>
+			<span>Yes</span>
+			<%= f.radio_button(:youth, "No") %>
+			<span>No</span>
+		</div>
+		<div class="row ma_truth">
+			By submitting this application, I affirm that the facts set forth in it are true and complete. I understand that if I am accepted as a Madrich/a, any false statements, omissions, and other misrepresentations made by me on this application may result in my immediate dismissal.
+		</div>
+		<div class="row">
+			<%= f.submit "Submit", :class => "button" %>
+			<%= link_to "Cancel", root_url, :class => "button" %>
+		</div>
+	<% end %>
 </div>	

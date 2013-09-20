@@ -27,12 +27,24 @@ class TeenNewController < ApplicationController
 	end
 	
 	def edit
+		@teen_new = TeenNew.find(params[:id])
+		@teen = Teen.find(@teen_new.teen_id)
 	end
 
 	def update
+		@teen_new = TeenNew.find(params[:id])
+		@teen_new.update_attributes(new_params)
+
+		redirect_to teen_new_index_url
+		flash[:notice] = "Application Updated"
 	end
 
 	def destroy
+		teen_new = TeenNew.find(params[:id])
+		teen_new.destroy
+
+		redirect_to teen_new_index_url
+		flash[:notice] = "Application Deleted"
 	end
 
 	private

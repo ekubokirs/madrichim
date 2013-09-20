@@ -25,12 +25,24 @@ class TeenTermController < ApplicationController
 	end
 
 	def edit
+		@teen_term = TeenTerm.find(params[:id])
+		@teen = User.find(@teen_term.teen_id)
 	end
 
 	def update
+		@teen_term = TeenTerm.find(params[:id])
+		@teen_term.update_attributes(term_params)
+
+		redirect_to teen_term_index_url
+		flash[:notice] = "Form Updated"
 	end
 
 	def destroy
+		teen_term = TeenTerm.find(params[:id])
+		teen_term.destroy
+
+		redirect_to teen_term_index_url
+		flash[:notice] = "Form Deleted"
 	end
 
 	private
