@@ -27,6 +27,8 @@ class TeacherEndYearController < ApplicationController
 
 	def edit
 		@teach_end = TeacherEndYear.find(params[:id])
+		@user = User.find(@teach_end.user_id)
+		@teen = User.find(@teach_end.teen_id)
 	end
 
 	def update

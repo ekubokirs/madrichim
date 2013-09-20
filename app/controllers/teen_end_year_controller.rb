@@ -25,12 +25,24 @@ class TeenEndYearController < ApplicationController
 	end
 
 	def edit
+		@teen_end = TeenEndYear.find(params[:id])
+		@teen = Teen.find(@teen_end.teen_id)
 	end
 
 	def update
+		@teen_end = TeenEndYear.find(params[:id])
+		@teen_end.update_attributes(end_params)
+
+		redirect_to teen_end_year_index_url
+		flash[:notice] = "Evaluation Updated"
 	end
 
 	def destroy
+		teen_end = TeenEndYear.find(params[:id])
+		teen_end.destroy
+
+		redirect_to teen_end_year_index_url
+		flash[:notice] ="Evaluation Deleted"
 	end
 	
 	private

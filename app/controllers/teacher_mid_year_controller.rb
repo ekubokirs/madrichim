@@ -26,12 +26,24 @@ class TeacherMidYearController < ApplicationController
 	end
 
 	def edit
+		@teach_mid = TeacherMidYear.find(params[:id])
+		@user = User.find(@teach_mid.user_id)
+		@teen = User.find(@teach_mid.teen_id)
 	end
 
 	def update
+		@teach_mid = TeacherMidYear.find(params[:id])
+		@teach_mid.update_attributes(mid_year_params)
+		redirect_to teacher_mid_year_index_url
+		flash[:notice] = "Evaluation Updated"
 	end
 
 	def destroy
+		teach_mid = TeacherMidYear.find(param[:id])
+		teach_mid.destroy
+
+		redirect_to teacher_mid_year_index_url
+		flash[:notice] = "Evaluation Deleted"
 	end
 
 	private
