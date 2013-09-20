@@ -27,7 +27,11 @@ class IncidentsController <ApplicationController
 	end
 
 	def edit
+		@user = current_user
 		@incident = Incident.find(params[:id])
+		@user1 = User.find(@incident.user_id)
+		@teens = User.where(_type: "Teen").all
+		@participants = User.find(@incident.participants)
 	end
 
 	def update

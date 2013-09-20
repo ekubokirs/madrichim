@@ -26,7 +26,9 @@ before_action :is_authenticated
 	end
 
 	def edit
+		@user = current_user
 		@interview = AdminInterview.find(params[:id])
+		@teen = User.find(@interview.teen_id)
 	end
 
 	def update

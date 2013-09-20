@@ -41,7 +41,7 @@ class TeacherEndYearController < ApplicationController
 		teach_end.destroy
 
 		redirect_to teacher_end_year_index_url
-		flash[:notice] = "Evaluation Updated"
+		flash[:notice] = "Evaluation Deleted"
 	end
 
 	private

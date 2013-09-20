@@ -2,6 +2,7 @@
 	background-color: #fff;
 	border: solid 3px #d2c683;
 	margin:5%;
+	margin-top: 3%;
 	padding: 1%;
 	border-radius: 25px;
 }
@@ -76,8 +77,8 @@
 	font-family: 'Jacques Francois', serif;
 }
 .ma_topbar{
-	color: #fff;
-	margin-left: .5%;
+	color: #001cff;
+	margin-left: 13%;
 }
 .ma_program{
 	border: solid 1px;
@@ -93,4 +94,10 @@
 }
 #ma_teacher_reg_form{
 	display: none
+}
+.ma_top-bar{
+	border-bottom: 1px solid #d2c683;
+}
+.ma_dropdown{
+	border: 1px solid #d2c683;
 }

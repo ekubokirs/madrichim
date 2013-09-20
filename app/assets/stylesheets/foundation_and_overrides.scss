@@ -1234,7 +1234,7 @@ $h1-font-size: emCalc(75);
 
 // Background color for the top bar
 
-$topbar-bg: #001cff;
+$topbar-bg: #ffffff;
 
 // Height and margin
 
@@ -1248,12 +1248,12 @@ $topbar-bg: #001cff;
 // Controlling the styles for the title in the top bar
 
 // $topbar-title-weight: bold;
-// $topbar-title-font-size: emCalc(17);
+$topbar-title-font-size: emCalc(17);
 
 // Style the top bar dropdown elements
 
-$topbar-dropdown-bg: #001cff;
-// $topbar-dropdown-link-color: #fff;
+$topbar-dropdown-bg: #ffffff;
+$topbar-dropdown-link-color: #001cff;
 // $topbar-dropdown-link-bg: lighten($topbar-bg, 5%);
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
@@ -1261,7 +1261,7 @@ $topbar-dropdown-bg: #001cff;
 
 // Set the link colors and styles for top-level nav
 
-// $topbar-link-color: #fff;
+$topbar-link-color: #001cff;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-weight: bold;
@@ -1280,8 +1280,8 @@ $topbar-dropdown-bg: #001cff;
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13);
 // $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
+$topbar-menu-link-color: #001cff;
+$topbar-menu-icon-color: #001cff;
 // $topbar-menu-link-color-toggled: #888;
 // $topbar-menu-icon-color-toggled: #888;
 
@@ -1293,7 +1293,7 @@ $topbar-dropdown-bg: #001cff;
 
 // Divider Styles
 
-// $topbar-divider-border-bottom: solid 1px lighten($topbar-bg, 10%);
+$topbar-divider-border-bottom: solid 1px #d2c683;
 // $topbar-divider-border-top: solid 1px darken($topbar-bg, 10%);
 
 // Sticky Class

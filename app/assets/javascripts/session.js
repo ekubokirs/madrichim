@@ -13,7 +13,7 @@ $(function(){
 			// hides the sign up instructions
 			$('.ma_signin').hide(300);
 			// changes text on the button
-			$(this).html('Register')
+			$(this).html('Register');
 			// removes class
 			$(this).removeClass("passwordHidden");
 			
@@ -28,7 +28,7 @@ $(function(){
 			// adds sign up instructions
 			$('.ma_signin').show(300);
 			//changes button text
-			$(this).html('Log In')
+			$(this).html('Log In');
 			// adds class
 			$(this).addClass("passwordHidden")
 		}
