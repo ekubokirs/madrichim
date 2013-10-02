@@ -1,6 +1,9 @@
 <div id="ma_teacher_update_form">
 	<%= form_for @admin, url: user_path(@admin) do |f| %>
   	<div class="row">
+  		<%= f.id %>
+  	</div>
+  	<div class="row">
 			<p class="large-6 columns">
 				<%= f.label :first_name %>
 				<%= f.text_field :first_name %>
