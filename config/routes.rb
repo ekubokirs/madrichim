@@ -13,6 +13,7 @@ Madrichim::Application.routes.draw do
   resources :teen_mid_year
   resources :teen_end_year
   resources :teen_term
+  resources :retreat
   
   resources :users
   # Registration

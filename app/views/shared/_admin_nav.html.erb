@@ -1,0 +1,53 @@
+<nav class="top-bar ma_top-bar">
+	<ul class="title-area">
+		<li class="name">
+			<h1 class="ma_topbar"><%= link_to "CTJ Madrichim", root_url %></h1>
+		</li>
+		<li class="toggle-topbar menu-icon">
+			<a href="#">
+				<span>Menu</span>
+			</a>
+		</li>
+	</ul>
+	<section class="top-bar-section">
+		<ul class="right">
+			<li class="divider ma_dropdown"></li>
+			<li><%= link_to "Teacher Contacts", teacher_index_url, :class => "ma_top-bar" %></li>
+			<li class="divider"></li>
+			<li><%= link_to "Edit Users", users_url, :class => "ma_top-bar" %></li>
+			<li class="divider ma_dropdown"></li>
+			<li class="has-dropdown ma_top-bar">
+				<a href="#">Incidents</a>
+				<ul class="dropdown ma_dropdown">
+					<li><%= link_to "New Incident Report", new_incident_url %></li>
+					<li><%= link_to "All Incident Reports", incidents_url %></li>
+				</ul>
+			</li>
+			<li class="divider ma_dropdown"></li>
+			<li class="has-dropdown ma_top-bar">
+				<a href="#">New Forms</a>
+				<ul class="dropdown ma_dropdown">
+					<li><%= link_to "Interview Form", new_admin_interview_url %></li>
+					<li><%= link_to "Mid-Year Form", new_teacher_mid_year_url  %></li>
+					<li><%= link_to "End of Year Form", new_teacher_end_year_url %></li>
+				</ul>
+			</li>
+			<li class="divider ma_dropdown"></li>
+			<li class="has-dropdown ma_top-bar">
+				<a href="#">Completed Forms</a>
+				<ul class="dropdown ma_dropdown">
+					<li><%= link_to "New Student Applications", teen_new_index_url %></li>
+					<li><%= link_to "Admin Interview Forms", admin_interview_index_url %></li>
+					<li><%= link_to "Retreat Applications", retreat_index_url %></li>
+					<li><%= link_to "Student Mid Year Evaluations", teen_mid_year_index_url %></li>
+					<li><%= link_to "Teacher Mid Year Evaluations", teacher_mid_year_index_url %></li>
+					<li><%= link_to "Student End of Year and Returning Applications", teen_end_year_index_url %></li>
+					<li><%= link_to "Teacher End of Year Evaluations", teacher_end_year_index_url %></li>
+					<li><%= link_to "Student Not Returning Evaluation", teen_term_index_url %></li>
+				</ul>
+			</li>
+			<li class="divider ma_dropdown"></li>
+			<li><%= link_to "Log Out", logout_url, :class => "ma_top-bar" %></li>
+		</ul>
+	</section>
+</nav>

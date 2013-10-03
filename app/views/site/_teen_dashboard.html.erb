@@ -1,133 +1,97 @@
-<div class="row">
-	<nav class="top-bar">
-		<ul class="title-area">
-			<li class="name">
-				<h1 class="ma_topbar"><%= @user.full_name %></h1>
-			</li>
-			<li class="toggle-topbar menu-icon">
-				<a href="#">
-					<span>Menu</span>
-				</a>
-			</li>
-		</ul>
-		<section class="top-bar-section">
-			<ul class="right">
-				<li><%= link_to "Incident Report", new_incident_url %></li>
-				<li class="divider"></li>
-				<li class="has-dropdown">
-					<a href="#">Forms</a>
-					<ul class="dropdown">
-						<li><%= link_to "New Madrich/a Application", new_teen_new_url %></li>
-						<li><%= link_to "Mid-Year Form", new_teen_mid_year_url  %></li>
-						<li><%= link_to "Returning Application", new_teen_end_year_url %></li>
-						<li><%= link_to "Not Returning Form", new_teen_term_url %></li>
-					</ul>
-				</li>
-				<li class="divider"></li>
-				<li class="has-dropdown">
-					<a href="#">References</a>
-					<ul class="dropdown">
-						<li><%= link_to "Dress Code", dresscode_url %></li>
-						<li><%= link_to "Program Format Outline", lesson_url  %></li>
-					</ul>
-				</li>
-				<li class="divider"></li>
-				<li><%= link_to "Log Out", logout_url %></li>
-			</ul>
-		</section>
-	</nav>
-</div>
-<div class="row ma_flashalert">
-	<%= flash.notice %>
-</div>
-<div class="row">
-	<div class="large-4 large-offset-4 columns heb ma_greet">
-		שלום!
+<%= render partial: "shared/teen_nav" %>
+<div class="ma_back">
+	<div class="row ma_flashalert">
+		<%= flash.notice %>
 	</div>
-</div>
-<div class="row">
-	<table class = "large-6 columns">
-		<thead>
-			<tr>
-				<td>Mid-Year</td>
-				<td>Time Stamp</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @form_mid.each do |fn| %>
-			<tr>
-				<td><%= link_to fn.id, teen_mid_year_url(fn.id) %></td>
-				<td><%= fn.updated_at %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
-	<table class = "large-6 columns">
-		<thead>
-			<tr>
-				<td>End of Year Evaluation and Reapplication</td>
-				<td>Time Stamp</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @form_end.each do |fn| %>
-			<tr>
-				<td><%= link_to fn.id, teen_end_year_url(fn.id) %></td>
-				<td><%= fn.updated_at %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
-</div>
-<div class="row">
-	<table class = "large-6 columns">
-		<thead>
-			<tr>
-				<td>Application</td>
-				<td>Time Stamp</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @form_new.each do |fn| %>
-			<tr>
-				<td><%= link_to fn.id, teen_new_url(fn.id) %></td>
-				<td><%= fn.updated_at %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
-	<table class = "large-6 columns">
-		<thead>
-			<tr>
-				<td>Non-Returning Application</td>
-				<td>Time Stamp</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @form_term.each do |fn| %>
+	<div class="row">
+		<div class="large-4 large-offset-4 columns heb ma_greet">
+			שלום!
+		</div>
+	</div>
+	<div class="row">
+		<table class = "large-6 columns">
+			<thead>
 				<tr>
-					<td><%= link_to fn.id, teen_term_url(fn.id) %></td>
+					<td>Mid-Year</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @form_mid.each do |fn| %>
+				<tr>
+					<td><%= link_to fn.id, teen_mid_year_url(fn.id) %></td>
 					<td><%= fn.updated_at %></td>
 				</tr>
 				<% end %>
-		</tbody>
-	</table>
-</div>
-<div class="row">
-	<table class = "large-12 columns">
-		<thead>
-			<tr>
-				<td>Incident Reports</td>
-				<td>Time Stamp</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @incident.each do |fn| %>
-			<tr>
-				<td><%= link_to fn.id, incident_url(fn.id) %></td>
-				<td><%= fn.updated_at %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
+			</tbody>
+		</table>
+		<table class = "large-6 columns">
+			<thead>
+				<tr>
+					<td>End of Year Evaluation and Reapplication</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @form_end.each do |fn| %>
+				<tr>
+					<td><%= link_to fn.id, teen_end_year_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<table class = "large-6 columns">
+			<thead>
+				<tr>
+					<td>Application</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @form_new.each do |fn| %>
+				<tr>
+					<td><%= link_to fn.id, teen_new_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<table class = "large-6 columns">
+			<thead>
+				<tr>
+					<td>Non-Returning Application</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @form_term.each do |fn| %>
+					<tr>
+						<td><%= link_to fn.id, teen_term_url(fn.id) %></td>
+						<td><%= fn.updated_at %></td>
+					</tr>
+					<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<table class = "large-12 columns">
+			<thead>
+				<tr>
+					<td>Incident Reports</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @incident.each do |fn| %>
+				<tr>
+					<td><%= link_to fn.id, incident_url(fn.id) %></td>
+					<td><%= fn.updated_at %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 </div>

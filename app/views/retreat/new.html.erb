@@ -1,0 +1,38 @@
+<%= render partial: "shared/teen_nav" %>
+<div class="ma_back">
+	<%= form_for :retreat, url: {action: "create"} do |f| %>
+		<p class="row">
+			<%= f.label :want, "Why Do You Want To Come On The Retreat? What Makes You Qualified?" %>
+			<%= f.text_area :want %>
+		</p>
+		<p class="row">
+			<%= f.label :bedtime, "Tell Us A Bedtime Story" %>
+			<%= f.text_area :bedtime %>
+		</p>
+		<p class="row">
+			<%= f.label :early, "Name Three Activities You Might Do If Your Group Arrived Early TO An Activity." %>
+			<%= f.text_area :early %>
+		</p>
+		<p class="row">
+			<%= f.label :better, "What Do You Hope To Get Better At Doing With Kids?" %>
+			<%= f.text_area :better %>
+		</p>
+		<p class="row">
+			<%= f.label :homesickness, "How Would You Help A Kid Who Was Homesick?" %>
+			<%= f.text_area :homesickness %>
+		</p>
+		<p class="row">
+			<%= f.label :afraid, "Are You Afraid of Bodily Fluids? (i.e. urine, vomit, etc.)" %>
+			<%= f.text_area :afraid %>
+		</p>
+		<p class="row">
+			<%= f.label :concern, "Do You Have Any Concerns About Coming On The Retreat?" %>
+			<%= f.text_area :concern %>
+		</p>
+		<p class="row">
+			<%= f.submit "Submit", :class => "button" %>
+			<%= link_to "Cancel", root_url, :class => "button" %>
+		</p>
+	<% end %>
+
+</div>

@@ -1,0 +1,24 @@
+<%= render partial: "shared/admin_nav" %>
+<div class="ma_back">
+	<div class="row ma_flashalert">
+		<%= flash.notice %>
+	</div>
+	<table class="row">
+		<thead>
+			<tr>
+				<td>Retreat Application</td>
+				<td>Name</td>
+				<td>Time Stamp</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @retreat.each do |fn| %>
+				<tr>
+					<td><%= link_to fn.id, retreat_url(fn.id) %></td>
+					<td><%= fn.teen.full_name %></td>
+					<td><%= fn.updated_at %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

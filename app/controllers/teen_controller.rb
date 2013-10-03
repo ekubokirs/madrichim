@@ -14,6 +14,7 @@ class TeenController < ApplicationController
 	@form_mid = TeenMidYear.where(teen_id: @teen.id).all
 	@form_end = TeenEndYear.where(teen_id: @teen.id).all
 	@form_term = TeenTerm.where(teen_id: @teen.id).all
+	@app_retreat = Retreat.where(teen_id: @teen.id).all
 
 	@form_teach_mid = TeacherMidYear.where(teen_id: @teen.id).all
 	@form_teach_end = TeacherEndYear.where(teen_id: @teen.id).all

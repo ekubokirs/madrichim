@@ -1,0 +1,38 @@
+<nav class="top-bar">
+	<ul class="title-area">
+		<li class="name">
+			<h1 class="ma_topbar"></h1>
+		</li>
+		<li class="toggle-topbar menu-icon">
+			<a href="#">
+				<span>Menu</span>
+			</a>
+		</li>
+	</ul>
+	<section class="top-bar-section">
+		<ul class="right">
+			<li><%= link_to "Incident Report", new_incident_url %></li>
+			<li class="divider"></li>
+			<li class="has-dropdown">
+				<a href="#">Forms</a>
+				<ul class="dropdown">
+					<li><%= link_to "New Madrich/a Application", new_teen_new_url %></li>
+					<li><%= link_to "Retreat Application", new_retreat_url %></li>
+					<li><%= link_to "Mid-Year Form", new_teen_mid_year_url  %></li>
+					<li><%= link_to "Returning Application", new_teen_end_year_url %></li>
+					<li><%= link_to "Not Returning Form", new_teen_term_url %></li>
+				</ul>
+			</li>
+			<li class="divider"></li>
+			<li class="has-dropdown">
+				<a href="#">References</a>
+				<ul class="dropdown">
+					<li><%= link_to "Dress Code", dresscode_url %></li>
+					<li><%= link_to "Program Format Outline", lesson_url  %></li>
+				</ul>
+			</li>
+			<li class="divider"></li>
+			<li><%= link_to "Log Out", logout_url %></li>
+		</ul>
+	</section>
+</nav>
