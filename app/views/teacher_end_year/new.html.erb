@@ -1,9 +1,6 @@
+<%= render partial: @nav %>
 <div class="ma_back">	
-	<div class="row">
-		<div class="ma_head">
-			<h1 class="ma_title">CTJ<br>Madrichim</h1>
-		</div>
-		<%= form_for :teacher_end_year, url: {action: "create"} do |f| %>
+	<%= form_for :teacher_end_year, url: {action: "create"} do |f| %>
 		<div class="row">
 			<span class="large-12 columns ma_open"> Submitting form as: <%= @user.full_name %> </span>
 			<hr>
@@ -88,4 +85,4 @@
 			<%= link_to "Cancel", root_url, :class => "button" %>
 		</div>
 	<% end %>
-	</div>
+</div>

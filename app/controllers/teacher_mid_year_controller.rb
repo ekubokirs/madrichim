@@ -9,6 +9,14 @@ class TeacherMidYearController < ApplicationController
 		@user = current_user
 		@teacherMY = TeacherMidYear.new
 		@teens = User.where(_type: "Teen").all
+		if is_teacher?
+			@nav = "shared/teacher_nav"
+		elsif is_admin?
+			@nav = "shared/admin_nav"
+		else
+			redirect_to root_url
+			flash[:notice] = "Incorrect User Type."
+		end
 	end
 
 	def create
@@ -23,6 +31,14 @@ class TeacherMidYearController < ApplicationController
 	def show
 		@teach_mid = TeacherMidYear.find(params[:id])
 		@teen = User.find(@teach_mid.teen_id)
+		if is_teacher?
+			@nav = "shared/teacher_nav"
+		elsif is_admin?
+			@nav = "shared/admin_nav"
+		else
+			redirect_to root_url
+			flash[:notice] = "Incorrect User Type."
+		end
 	end
 
 	def edit

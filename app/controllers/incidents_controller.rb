@@ -10,6 +10,16 @@ class IncidentsController <ApplicationController
 		@user = current_user
 		@incident = Incident.new
 		@teens = User.where(_type: "Teen").all
+		if is_teen?
+			@nav = "shared/teen_nav"
+		elsif is_teacher?
+			@nav = "shared/teacher_nav"
+		elsif is_admin?
+			@nav = "shared/admin_nav"
+		else
+			redirect_to root_url
+			flash[:notice] = "Invaild User Type"
+		end
 	end
 
 	def create
@@ -24,6 +34,16 @@ class IncidentsController <ApplicationController
 	def show
 		@incident = Incident.find(params[:id])
 		@user = User.find(@incident.user_id)
+		if is_teen?
+			@nav = "shared/teen_nav"
+		elsif is_teacher?
+			@nav = "shared/teacher_nav"
+		elsif is_admin?
+			@nav = "shared/admin_nav"
+		else
+			redirect_to root_url
+			flash[:notice] = "Invaild User Type"
+		end
 	end
 
 	def edit

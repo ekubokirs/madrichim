@@ -77,7 +77,7 @@
 		</table>
 	</div>
 	<div class="row">
-		<table class = "large-12 columns">
+		<table class = "large-6 columns">
 			<thead>
 				<tr>
 					<td>Incident Reports</td>
@@ -90,6 +90,22 @@
 					<td><%= link_to fn.id, incident_url(fn.id) %></td>
 					<td><%= fn.updated_at %></td>
 				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<table class = "large-6 columns">
+			<thead>
+				<tr>
+					<td>Retreat Application</td>
+					<td>Time Stamp</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @retreat.each do |fn| %>
+					<tr>
+						<td><%= link_to fn.id, retreat_url(fn.id) %></td>
+						<td><%= fn.updated_at %></td>
+					</tr>
 				<% end %>
 			</tbody>
 		</table>

@@ -1,9 +1,5 @@
+<%= render partial: "shared/admin" %>
 <div class="ma_back">	
-	<div class="row">
-		<div class="ma_head">
-			<h1 class="ma_title">CTJ<br>Madrichim</h1>
-		</div>
-	</div>
 	<%= form_for :admin_interview, url: {action: "create"} do |f| %>
 		<div class="row">
 			<%= f.label :teen_id, "Madrich/a Name:" %>

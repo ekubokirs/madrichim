@@ -12,6 +12,7 @@ class User
   key :fish,        String, :required =>  true
   key :code,        String
   key :expires_at,  Time
+  # key :active,      Boolean
 
   before_validation :encrypt_password
 

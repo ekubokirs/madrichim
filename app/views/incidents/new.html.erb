@@ -1,9 +1,5 @@
+<%= render partial: @nav %>
 <div class="ma_back">	
-	<div class="row">
-		<div class="ma_head">
-			<h1 class="ma_title">CTJ<br>Madrichim</h1>
-		</div>
-	</div>
 	<%= form_for :incident, url: {action: "create"} do |f| %>
 		<div class="row">
 			Reporter: <%= @user.full_name %>
