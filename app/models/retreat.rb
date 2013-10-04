@@ -11,4 +11,6 @@ class Retreat
 	key	:afraid,					String
 	key	:concern,					String
 
+	timestamps!
+
 end
