@@ -18,7 +18,7 @@
 			<% @interview.each do |fn| %>
 			<tr>
 				<td><%= link_to fn.id, admin_interview_url(fn.id) %></td>
-				<td><%= fn.admin.full_name %></td>
+				<td><%#= fn.admin.full_name %></td>
 				<td><%= fn.teen.full_name %></td>
 				<td><%= fn.updated_at %></td>
 				<td><%= link_to "Edit", edit_admin_interview_url(fn.id) %></td>
