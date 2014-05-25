@@ -18,7 +18,7 @@
 			<% end %>
 		</div>
 		<div class="large-6 columns">
-			<div class="ma_formListTitle">End of Year Evaluation and Reapplication</div>
+			<span class="ma_formListTitle">End of Year Evaluation and Reapplication</span>
 			<% @form_end.each do |fn| %>
 				<ul class="ma_formList">
 					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_end_year_url(fn.id) %></li>

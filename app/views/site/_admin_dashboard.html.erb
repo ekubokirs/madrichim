@@ -7,27 +7,20 @@
 		<%= flash.notice %>
 	</div>
 	<div class="row">
-		<table class="large-12 columns">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>E-Mail</th>
-					<th>Cell Phone</th>
-					<th>Home Phone</th>
-					<th>Birthday</th>
-				</tr>
-			</thead>
-			<tbody>
+		<div class="large-12 columns ma_teenList">
+			<ul>
 				<% @teens.each do |teen| %>
-				<tr>
-					<td><%= link_to teen.full_name, teen_url(teen) %> </td>
-					<td><%= teen.email %></td>
-					<td><%= teen.cell_phone %></td>
-					<td><%= teen.home_phone %></td>
-					<td><%= teen.born_on %></td>
-				</tr>
+					<li>
+						<%= link_to teen.full_name, teen_url(teen) %>
+						<ul>
+							<li>Email: <%= teen.email %></li>
+							<li>Cell Phone: <%= teen.cell_phone %></li>
+							<li>Home Phone: <%= teen.home_phone %></li>
+							<li>Birthday: <%= teen.born_on.strftime("%m/%d/%Y") %></li>
+						</ul>
+					</li>
 				<% end %>
-			</tbody>
-		</table>
+			</ul>
+		</div>
 	</div>
 </div>

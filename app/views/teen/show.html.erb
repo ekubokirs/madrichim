@@ -6,163 +6,89 @@
 		</div>
 	</div>
 	<div class="row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Mid-Year</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">Mid Year Evaluation</span>
+			<ul class="ma_formList">
 				<% @form_mid.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teen_mid_year_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_mid_year_url(fn.id) %></li>
 				<% end %>
-			</tbody>
-		</table>
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Teacher Mid-Year</td>
-					<td>Teacher Name</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+			</ul>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">Teacher Mid Year Evaluation</span>
+			<ul class="ma_formList">
 				<% @form_teach_mid.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teacher_mid_year_url(fn.id) %></td>
-					<td><%= fn.user.full_name %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
+					<li><%= link_to fn.user.full_name, teacher_mid_year_url(fn.id)%> <br><%= fn.updated_at.strftime("%m/%d/%Y")%></li>
 				<% end %>
-			</tbody>
-		</table>
+			</ul>
+		</div>
+		<hr>
 	</div>
 	<div class="row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>End of Year Evaluation and Reapplication</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">End of Year Evaluation and Reapplication</span>
+			<ul class="ma_formList">
 				<% @form_end.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teen_end_year_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_end_year_url(fn.id) %></li>
 				<% end %>
-			</tbody>
-		</table>
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>End of Year Teacher Evaluation</td>
-					<td>Teacher Name</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+			</ul>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">Teacher End of Year Evaluation</span>
+			<ul class="ma_formList">
 				<% @form_teach_end.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teacher_end_year_url(fn.id) %></td>
-					<td><%= fn.user.full_name %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
+					<li><%= link_to fn.user.full_name, teacher_end_year_url(fn.id)%> <br><%= fn.updated_at.strftime("%m/%d/%Y")%></li>
 				<% end %>
-			</tbody>
-		</table>
+			</ul>
+		</div>
+		<hr>
 	</div>
 	<div class="row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Application</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">Application</span>
+			<ul class="ma_formList">
 				<% @form_new.each do |fn| %>
-				<tr>
-					<td> <%= link_to fn.id, teen_new_url(fn.id) %> </td>
-					<td> <%= fn.updated_at %> </td>
-				</tr>
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_new_url(fn.id) %></li>
 				<% end %>
-			</tbody>
-		</table>
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Non-Returning Application</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+			</ul>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">Non-Returning</span>
+			<ul class="ma_formList">
 				<% @form_term.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teen_term_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_term_url(fn.id)%></li>
 				<% end %>
-			</tbody>
-		</table>
+			</ul>
+		</div>
+		<hr>
 	</div>
-	<div class = "row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Incidents Involved In</td>
-					<td>Reported By</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">Incidents Involved In</span>
+			<ul class="ma_formList">
 				<% @incident.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, incident_url(fn.id) %></td>
-					<td><%= fn.user.full_name %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), incident_url(fn.id) %><br><%= fn.user.full_name%></li>
 				<% end %>
-			</tbody>
-		</table>
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Incidents Reported</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+			</ul>
+		</div>
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">Incidents Reported</span>
+			<ul class="ma_formList">
 				<% @incident_r.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, incident_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), incident_url(fn.id)%></li>
 				<% end %>
-			</tbody>
-		</table>
+			</ul>
+		</div>
+		<hr>
 	</div>
-	<div class = "row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Interview Forms</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
+	<div class="row">
+		<div class="large-6 columns">
+			<span class="ma_formListTitle">Interview Form</span>
+			<ul class="ma_formList">
 				<% @interview.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, admin_interview_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), admin_interview_url(fn.id) %><br><%= fn.user.full_name%></li>
 				<% end %>
-			</tbody>
-		</table>
+			</ul>
+		</div>
 	</div>
 </div>
