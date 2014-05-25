@@ -7,27 +7,17 @@
 		<div class="ma_sudent">
 		</div>
 	</div>
-	<table class="row">
-		<thead>
-			<tr>
-				<td>Interview Comments</td>
-				<td>Interviewer Name</td>
-				<td>Teen Name</td>
-				<td>Time Stamp</td>
-				<td>Edit</td>
-				<td>Delete</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @interview.each do |fn| %>
-			<tr>
-				<td><%#= fn.admin.full_name %></td>
-				<td><%= link_to fn.teen.full_name, admin_interview_url(fn.id) %></td>
-				<td><%= fn.updated_at %></td>
-				<td><%= link_to "Edit", edit_admin_interview_url(fn.id) %></td>
-				<td><%= link_to "Delete", admin_interview_url(fn.id), method: :delete %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
+	<div class="row">
+		<% @interview.each do |fn| %>
+			<ul>
+				<li><%= link_to fn.teen.full_name, admin_interview_url(fn.id) %>
+					<ul>
+						<li><%= fn.updated_at.strftime("%m/%d/%Y") %></li>
+						<li><%= link_to "Edit", edit_admin_interview_url(fn.id) %></li>
+						<li><%=	link_to "Delete", admin_interview_url(fn.id), method: :delete %></li>
+					</ul>
+				</li>
+			</ul>
+		<% end %>
+	</div>
 </div>
