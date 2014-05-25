@@ -1,4 +1,6 @@
 class SessionController < ApplicationController
+  before_action :set_timezone
+  
   def new
   end
 

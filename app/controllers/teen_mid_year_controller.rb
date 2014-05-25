@@ -1,5 +1,8 @@
 class TeenMidYearController < ApplicationController
   before_action :is_authenticated
+  before_action	:navigation
+  before_action	:set_timezone
+
 	def index
 		@teenMY = TeenMidYear.all
 		@user 		= current_user

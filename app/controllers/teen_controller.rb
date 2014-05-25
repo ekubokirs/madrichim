@@ -1,5 +1,8 @@
 class TeenController < ApplicationController
   before_action :is_authenticated
+  before_action	:navigation
+  before_action	:set_timezone
+
  def index
  	@teens = User.where(_type: "Teen").all
  end

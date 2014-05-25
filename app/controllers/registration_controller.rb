@@ -2,6 +2,7 @@ class RegistrationController < ApplicationController
 
 	after_action :clear_expired_registrants
 	before_action :get_registrant
+	before_action	:set_timezone
 
 	def new
 		@teen = Teen.new(email: @registrant.email)
@@ -11,12 +12,8 @@ class RegistrationController < ApplicationController
 	def create
 		if params[:teen]
 			@user = Teen.new(teen_params)
-			puts "==="*50
-			puts teen_params
 		elsif params[:teacher]
 			@user = Teacher.new(teacher_params)
-			puts "==="*50
-			puts teacher_params
 		else
 			redirect_to login_url
 			flash[:alert] = "You must be a Teacher or a Madrich/a!"
@@ -42,8 +39,6 @@ class RegistrationController < ApplicationController
 
 	def get_registrant
 		@registrant = Registrant.find_by_code params[:code]
-		puts "*"*50
-		puts @registrant
 		unless @registrant
 			Registrant.where(:expires_at.lt => Time.now)
 			redirect_to login_url

@@ -1,5 +1,8 @@
 class TeenEndYearController < ApplicationController
   before_action :is_authenticated
+  before_action	:navigation
+  before_action	:set_timezone
+
 	def index
 		@teen_end = TeenEndYear.all
 		@user 		= current_user
@@ -8,6 +11,7 @@ class TeenEndYearController < ApplicationController
 	def new
 		@user = current_user
 		@teen_end = TeenEndYear.new
+		@errors = "shared/noErrors"
 	end
 
 	def create
@@ -22,14 +26,6 @@ class TeenEndYearController < ApplicationController
 	def show
 		@teen_end = TeenEndYear.find(params[:id])
 		@teen = Teen.find(@teen_end.teen_id)
-		if is_teen?
-			@nav = "shared/teen_nav"
-		elsif is_admin?
-			@nav = "shared/admin_nav"
-		else
-			redirect_to root_url
-			flash[:notice] = "Invalid User Type"
-		end
 	end
 
 	def edit

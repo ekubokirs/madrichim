@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   helper_method :is_teen?
   helper_method :is_teacher?
   helper_method :is_admin?
+  helper_method :navigation
+  helper_method :set_timezone
 
   def current_user
   	@current_user = User.find_by_id session[:user_id]
@@ -25,4 +27,22 @@ class ApplicationController < ActionController::Base
   def is_admin?
   	current_user && @current_user.kind_of?(Admin)
   end
+
+  def navigation
+    if is_teen?
+      @nav = "shared/teen_nav"
+    elsif is_teacher?
+      @nav = "shared/teacher_nav"
+    elsif is_admin?
+      @nav = "shared/admin_nav"
+    else
+      redirect_to root_url
+      flash[:notice] = "Invalid User Type"
+    end
+  end
+
+  def set_timezone
+    Time.zone = "Pacific Time (US & Canada)"
+  end
+
 end

@@ -1,5 +1,7 @@
 class AdminInterviewController < ApplicationController
 before_action :is_authenticated
+before_action	:set_timezone
+
 	def index
 		@interview = AdminInterview.all
 		@user 		= current_user

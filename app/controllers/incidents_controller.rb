@@ -1,5 +1,7 @@
 class IncidentsController <ApplicationController
   before_action :is_authenticated
+  before_action	:navigation
+  before_action	:set_timezone
 	
 	def index
 		@incidents = Incident.all

@@ -1,5 +1,6 @@
 class SiteController < ApplicationController
 	before_action :is_authenticated
+	before_action	:set_timezone
 	
 	def index
 		@user 		= current_user

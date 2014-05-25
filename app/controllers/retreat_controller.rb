@@ -1,18 +1,13 @@
 class RetreatController < ApplicationController
+	before_action	:navigation
+	before_action	:is_authenticated?
+	before_action	:set_timezone
+
 	def index
 		@retreat = Retreat.all
 	end
 
 	def new
-		if current_user = is_teen?
-			@nav = "shared/teen_nav"
-		elsif current_user = is_admin?
-			@nav = "shared/admin_nav"
-		else
-			redirect_to root_url
-			flash[:notice] = "Error.  Must Be Madrich/a or Admin"
-		end
-				
 		@user = current_user
 		@retreat = Retreat.new
 	end
@@ -27,14 +22,6 @@ class RetreatController < ApplicationController
 	end
 
 	def show
-		if current_user = is_teen?
-			@nav = "shared/teen_nav"
-		elsif current_user = is_admin?
-			@nav = "shared/admin_nav"
-		else
-			redirect_to root_url
-			flash[:notice] = "Error.  Must Be Madrich/a or Admin"
-		end
 		@retreat = Retreat.find(params[:id])
 		@teen = Teen.find(@retreat.teen_id)
 	end

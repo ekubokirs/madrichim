@@ -1,6 +1,7 @@
 class PasswordController < ApplicationController
 	before_action :get_user
 	after_action	:clear_expired_codes
+	before_action	:set_timezone
 
 	def edit
 	end

@@ -9,105 +9,59 @@
 		</div>
 	</div>
 	<div class="row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Mid-Year</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @form_mid.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teen_mid_year_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>End of Year Evaluation and Reapplication</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @form_end.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teen_end_year_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+		<div class="large-6 columns">
+			<div class="ma_formListTitle">Mid-Year Forms</div>
+			<% @form_mid.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_mid_year_url(fn.id) %></li>
+				</ul>
+			<% end %>
+		</div>
+		<div class="large-6 columns">
+			<div class="ma_formListTitle">End of Year Evaluation and Reapplication</div>
+			<% @form_end.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_end_year_url(fn.id) %></li>
+				</ul>
+			<% end %>
+		</div>
+		<hr>
 	</div>
 	<div class="row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Application</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @form_new.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teen_new_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Non-Returning Application</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @form_term.each do |fn| %>
-					<tr>
-						<td><%= link_to fn.id, teen_term_url(fn.id) %></td>
-						<td><%= fn.updated_at %></td>
-					</tr>
-					<% end %>
-			</tbody>
-		</table>
+		<div class="large-6 columns">
+			<div class="ma_formListTitle">Application</div>
+			<% @form_new.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_new_url(fn.id) %></li>
+				</ul>
+			<% end %>
+		</div>
+		<div class="large-6 columns">
+			<div class="ma_formListTitle">Non-Returning</div>
+			<% @form_end.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teen_term_url(fn.id) %></li>
+				</ul>
+			<% end %>
+		</div>
+		<hr>
 	</div>
 	<div class="row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Incident Reports</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @incident.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, incident_url(fn.id) %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Retreat Application</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @retreat.each do |fn| %>
-					<tr>
-						<td><%= link_to fn.id, retreat_url(fn.id) %></td>
-						<td><%= fn.updated_at %></td>
-					</tr>
-				<% end %>
-			</tbody>
-		</table>
+		<div class="large-6 columns">
+			<div class="ma_formListTitle">Incident Reports</div>
+			<% @incident.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), incident_url(fn.id) %></li>
+				</ul>
+			<% end %>
+		</div>
+		<div class="large-6 columns">
+			<div class="ma_formListTitle">Retreat Application</div>
+			<% @retreat.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), retreat_url(fn.id) %></li>
+				</ul>
+			<% end %>
+		</div>
 	</div>
 </div>
