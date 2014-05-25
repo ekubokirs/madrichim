@@ -9,61 +9,38 @@
 		</div>
 	</div>
 	<div class="row">
-		<table class = "large-12 columns">
-			<thead>
-				<tr>
-					<td>Incident Reports</td>
-					<td>Madrichim Names</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @incident.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, incident_url(fn.id) %></td>
-					<td><%= fn.part_names %></td>
-					<td><%= fn.updated_at.strftime("%m/%d/%Y") %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+		<div class="large-12 columns">
+			<div class="ma_formListTitle">Incident Reports</div>
+			<% @incidents.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), incident_url(fn.id) %>
+						<ul><% fn.part_names.each do |name| %>
+							<li><%= name %></li>
+						</ul>
+					</li>
+				</ul>
+			<% end %>
+		</div>
 	</div>
 	<div class="row">
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>Mid-Year Evaluation</td>
-					<td>Madrich/a Name</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @form_mid.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teacher_mid_year_url(fn.id) %></td>
-					<td><%= fn.teen.full_name %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
-		<table class = "large-6 columns">
-			<thead>
-				<tr>
-					<td>End-Year Evaluation</td>
-					<td>Madrich/a Name</td>
-					<td>Time Stamp</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @form_end.each do |fn| %>
-				<tr>
-					<td><%= link_to fn.id, teacher_end_year_url(fn.id) %></td>
-					<td><%= fn.teen.full_name %></td>
-					<td><%= fn.updated_at %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+		<div class="large-12 columns">
+			<div class="ma_formListTitle">Mid-Year Evaluations</div>
+			<% @form_mid.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teacher_mid_url(fn.id) %><br><%= fn.teen.full_name %></li>
+				</ul>
+			<% end %>
+		</div>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="ma_formListTitle">End-Year Evaluations</div>
+			<% @form_end.each do |fn| %>
+				<ul class="ma_formList">
+					<li><%= link_to fn.updated_at.strftime("%m/%d/%Y"), teacher_end_url(fn.id) %><br><%= fn.teen.full_name %></li>
+				</ul>
+			<% end %>
+		</div>
 	</div>
 </div>
