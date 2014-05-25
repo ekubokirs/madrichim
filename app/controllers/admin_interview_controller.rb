@@ -66,7 +66,8 @@ before_action	:set_timezone
   		:madrich,
   		:other
   	)
-
-
 	end
+	def full_name
+    first_name + " " + last_name
+  end
 end

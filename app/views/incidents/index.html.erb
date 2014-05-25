@@ -3,26 +3,18 @@
 	<div class="row ma_flashalert">
 		<%= flash.notice %>
 	</div>
-	<table class="row">
-		<thead>
-			<tr>
-				<td>Incidents Involved In</td>
-				<td>Reported By</td>
-				<td>Teens Involved</td>
-				<td>Time Stamp</td>
-				<td>Delete</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @incidents.each do |fn| %>
-			<tr>
-				<td><%= link_to fn.id, incident_url(fn.id) %></td>
-				<td><%= fn.user.full_name %></td>
-				<td><%= fn.part_names %></td>
-				<td><%= fn.updated_at %></td>
-				<td><%= link_to "Delete", incident_url(fn.id), method: :delete %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
+	<div class="row">
+		<% @incidents.each do |fn| %>
+			<ul>
+				<li>
+					<%= link_to fn.updated_at.strftime("%m/%d/%Y %h/%M"), incident_url(fn.id) %>
+					<ul>
+						<li><%= fn.user.full_name %></li>
+						<li><%= fn.part_names %></li>
+						<li><%= link_to "Delete", incident_url(fn.id), method: :delete %></li>
+					</ul>
+				</li>
+			</ul>
+		<% end %>
+	</div>
 </div>

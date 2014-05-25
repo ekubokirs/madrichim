@@ -25,14 +25,6 @@ class TeenMidYearController < ApplicationController
 	def show
 		@teen_mid = TeenMidYear.find(params[:id])
 		@teen = Teen.find(@teen_mid.teen_id)
-		if is_teen?
-			@nav = "shared/teen_nav"
-		elsif is_admin?
-			@nav = "shared/admin_nav"
-		else
-			redirect_to root_url
-			flash[:notice] = "Invalid User Type"
-		end
 	end
 
 	def edit

@@ -1,25 +1,17 @@
 <%= render partial: "shared/admin_nav" %>
 <div class="ma_back">	
   <div class="row">
-  	<table class = "large-12 columns">
-			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Type</td>
-					<td>Edit</td>
-					<td>Delete</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @user.each do |fn| %>
-				<tr>
-					<td><%= fn.full_name %></td>
-					<td><%= fn._type %></td>
-					<td><%= link_to "Edit", edit_user_url(fn.id) %></td>
-					<td><%= link_to "Delete", user_url(fn.id), method: :delete %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+  	<% @user.each do |fn| %>
+  		<ul>
+  			<li>
+  				<%= fn.full_name %>
+  				<ul>
+  					<li><%= fn._type %></li>
+  					<li><%= link_to "Edit", edit_user_url(fn.id) %></li>
+  					<li><%= link_to "Delete", user_url(fn.id), method: :delete %></li>
+  				</ul>
+  			</li>
+  		</ul>
+  	<% end %>
   </div>
 </div>

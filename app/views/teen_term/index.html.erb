@@ -3,26 +3,18 @@
 	<div class="row ma_flashalert">
 		<%= flash.notice %>
 	</div>
-	<table class="row">
-		<thead>
-			<tr>
-				<td>Non-Returning</td>
-				<td>Name</td>
-				<td>Time Stamp</td>
-				<td>Edit</td>
-				<td>Delete</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @teen_term.each do |fn| %>
-			<tr>
-				<td><%= link_to fn.id, teen_term_url(fn.id) %></td>
-				<td><%= fn.teen.full_name %></td>
-				<td><%= fn.updated_at %></td>
-				<td><%= link_to "Edit", edit_teen_term_url(fn.id) %></td>
-				<td><%= link_to "Delete", teen_term_url(fn.id), method: :delete %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
+	<div class="row">
+		<% @teen_term.each do |fn| %>
+			<ul>
+				<li>
+					<%= link_to teen.full_name, teen_term_url(fn.id) %>
+					<ul>
+						<li><%= fn.updated_at.strftime("%m/%d/%Y") %></li>
+						<li><%= link_to "Edit", edit_teen_term_url(fn.id) %></li>
+						<li><%= link_to "Delete", teen_term_url(fn.id), method: :delete %></li>
+					</ul>
+				</li>
+			</ul>
+		<% end %>
+	</div>
 </div>

@@ -1,21 +1,12 @@
 <%= render partial: "shared/admin_nav" %>
 <div class="ma_back">	
 	<div class="row">
-  	<table class = "large-12 columns">
-			<thead>
-				<tr>
-					<td>Name</td>
-					<td>E-mail</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @teacher.each do |fn| %>
-				<tr>
-					<td><%= fn.full_name %></td>
-					<td><%= fn.email %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+		<% @teacher.each do |fn| %>
+			<ul>
+				<li>
+					<%= fn.full_name %><br><%= fn.email %>
+				</li>
+			</ul>
+		<% end %>
   </div>
 </div>

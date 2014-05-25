@@ -3,28 +3,20 @@
 	<div class="row ma_flashalert">
 		<%= flash.notice %>
 	</div>
-	<table class="row">
-		<thead>
-			<tr>
-				<td>Teacher Mid-Year Evaluation</td>
-				<td>Name</td>
-				<td>Teen Name</td>
-				<td>Time Stamp</td>
-				<td>Edit</td>
-				<td>Delete</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @teacherMY.each do |fn| %>
-			<tr>
-				<td><%= link_to fn.id, teacher_mid_year_url(fn.id) %></td>
-				<td><%= fn.user.full_name %></td>
-				<td><%= fn.teen.full_name %></td>
-				<td><%= fn.updated_at %></td>
-				<td><%= link_to "Edit", edit_teacher_mid_year_url(fn.id) %></td>
-				<td><%= link_to "Delete", teacher_mid_year_url(fn.id), method: :delete %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
+	<div class="row">
+		<% @teachMY.each do |fn| %>
+			<ul>
+				<li>
+					<%= link_to fn.id, teacher_mid_year_url(fn.id) %>
+					<ul>
+						<li><%= fn.user.full_name %></li>
+						<li><%= fn.teen.full_name %></li>
+						<li><%= fn.updated_at.strftime("%m/%d/%Y") %></li>
+						<li><%= link_to "Edit", edit_teacher_mid_year_url(fn.id) %></li>
+						<li><%= link_to "Delete", teacher_mid_year_url(fn.id), method: :delete %></li>
+					</ul>
+				</li>
+			</ul>
+		<% end %>
+	</div>
 </div>

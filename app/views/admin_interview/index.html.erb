@@ -12,7 +12,6 @@
 			<ul>
 				<li><%= link_to fn.teen.full_name, admin_interview_url(fn.id) %>
 					<ul>
-						<li><%= fn.updated_at.strftime("%m/%d/%Y") %></li>
 						<li><%= link_to "Edit", edit_admin_interview_url(fn.id) %></li>
 						<li><%=	link_to "Delete", admin_interview_url(fn.id), method: :delete %></li>
 					</ul>

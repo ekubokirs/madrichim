@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :is_admin?
   helper_method :navigation
   helper_method :set_timezone
+  helper_method :full_name
 
   def current_user
   	@current_user = User.find_by_id session[:user_id]
@@ -45,4 +46,7 @@ class ApplicationController < ActionController::Base
     Time.zone = "Pacific Time (US & Canada)"
   end
 
+  def full_name
+    first_name + " " + last_name
+  end
 end

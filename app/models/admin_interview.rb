@@ -2,7 +2,6 @@ class AdminInterview
   include MongoMapper::Document
 
   belongs_to :admin
-
   belongs_to :teen
 
   key :yourself, String
