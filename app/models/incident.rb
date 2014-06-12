@@ -3,7 +3,7 @@ class Incident
 
   belongs_to :user
 
-  key :participants,	Array
+  key 	:participants,	Array
   key	:report,				String
   key	:otherp,				String
 
