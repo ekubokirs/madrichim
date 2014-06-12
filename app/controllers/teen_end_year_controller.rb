@@ -5,6 +5,7 @@ class TeenEndYearController < ApplicationController
 
 	def index
 		@teen_end = TeenEndYear.all
+		@teen = Teen.find(@teen_end.teen_id)
 		@user 		= current_user
 	end
 
