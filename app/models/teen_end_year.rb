@@ -18,3 +18,7 @@ class TeenEndYear
 
 	timestamps!
 end
+
+def teen_name
+	Teen.find_by_id.full_name
+end

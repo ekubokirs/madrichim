@@ -49,8 +49,4 @@ class ApplicationController < ActionController::Base
   def full_name
     first_name + " " + last_name
   end
-
-  def teen_name
-    User.find_by_id.full_name
-  end
 end
