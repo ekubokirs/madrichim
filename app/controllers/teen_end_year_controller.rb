@@ -8,10 +8,6 @@ class TeenEndYearController < ApplicationController
 		@user 		= current_user
 	end
 
-	def teen_name
-		Teen.find_by_id.full_name
-	end
-
 	def new
 		@user = current_user
 		@teen_end = TeenEndYear.new

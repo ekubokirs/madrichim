@@ -17,5 +17,9 @@ class TeenEndYear
 	key	:desc,			String
 
 	timestamps!
+
+	def teen_name
+		Teen.find_by_id.full_name
+	end
 end
 
