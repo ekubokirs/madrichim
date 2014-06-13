@@ -4,7 +4,7 @@
   	<% @user.each do |fn| %>
   		<ul>
   			<li>
-  				<%= fn.full_name %>
+  				<%= fn.first_name %> <%= fn.last_name %>
   				<ul>
   					<li><%= fn._type %></li>
   					<li><%= link_to "Edit", edit_user_url(fn.id) %></li>
