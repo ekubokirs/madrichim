@@ -4,7 +4,7 @@
 		<%= flash.notice %>
 	</div>
 	<div class="row">
-		<% @teen_mid.each do |fn| %>
+		<% @teenMY.each do |fn| %>
 			<ul>
 				<li>
 					<%= link_to fn.teen.full_name, teen_mid_year_url(fn.id) %>
