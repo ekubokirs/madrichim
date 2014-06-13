@@ -7,7 +7,7 @@
 		<% @teen_term.each do |fn| %>
 			<ul>
 				<li>
-					<%= link_to teen.full_name, teen_term_url(fn.id) %>
+					<%= link_to fn.teen_id, teen_term_url(fn.id) %>
 					<ul>
 						<li><%= fn.updated_at.strftime("%m/%d/%Y") %></li>
 						<li><%= link_to "Edit", edit_teen_term_url(fn.id) %></li>
