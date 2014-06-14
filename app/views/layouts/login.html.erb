@@ -1,0 +1,38 @@
+<div class="row">
+		<div class="large-5 columns ma_login">
+			<%= form_tag login_path do %>
+				<div class="ma_signin hide-text">
+					To sign up, please enter your email and a new user email will be sent to you.
+				</div>
+				<div class="ma_reset">
+					To reset your password, please enter your email and leave the password field blank.  A reset email will be sent to you.
+				</div>
+				<%= label_tag :email, "E-mail", :class => "ma_label" %>
+				<%= text_field_tag :email %>
+				<%= label_tag :password, "Password", :id => "passwordLabel", :class => "ma_label" %>
+				<%= password_field_tag :password, nil, :id => "inputPassword" %>
+				<div class="row">
+					<button id="toggle-password-field" id="showPassword" class ="small button alert">Show Password</button>
+				</div>
+				<div class="row">
+					<div class="large-6 columns">
+						<%= submit_tag "Submit", :class => "button" %>
+					</div>
+					<div class="large-6 columns">
+						<%= button_tag "Register", :id => "newReg" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="large-5 columns">
+			<div class="row">
+				<h2 class="ma_welcome">Welcome!</h2>
+			</div>
+			<div class="row ma_weltext">
+				This site is for Congregation Tikvat Jacob Beth Torah madrichim and teachers to submit all necessary forms for the Madrichim Coordinator.
+			</div>
+		</div>
+	</div>
+	<div class="row ma_design">
+		This site was designed and developed by Emilia Kubo Kirschenbaum.
+	</div>
