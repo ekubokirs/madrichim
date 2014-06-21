@@ -1,6 +1,0 @@
-You have <%= pluaralize(@teen_end.errors.count, "error") %> which means this form could not be saved. Please fix the following issues:
-<ul class="ma_errorList">
-	<% @teen_end.errors.full_messages.each do |msg| %>
-		<li class="ma_errorMessage"><%= msg %></li>
-	<% end %>
-</ul>
