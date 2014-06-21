@@ -15,22 +15,12 @@ class TeenEndYearController < ApplicationController
 	end
 
 	def create
-		@Errors   = "errors"
-		@noErrors = "shared/noErrors"
-
-		@user = current_user
-		@teen_end = TeenEndYear.new
-		
 		@teen_end = TeenEndYear.new end_params
 		@teen_end.teen_id = current_user._id
 		@teen_end.save
-		if @teen_end.errors.any?
-			render :new
-			@user = current_user
-		else
-			redirect_to root_url
-			flash[:notice] = "Application Saved!"
-		end
+
+		redirect_to root_url
+		flash[:notice] = "Application Saved!"
 	end
 
 	def show
