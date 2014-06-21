@@ -5,29 +5,36 @@ class RegistrationController < ApplicationController
 	before_action	:set_timezone
 
 	def new
+		@errors = 'shared/noErrors'
 		@teen = Teen.new(email: @registrant.email)
 		@teacher = Teacher.new(email: @registrant.email)
 	end
 
 	def create
+		@teen 		= Teen.new(email: @registrant.email)
+		@teacher 	= Teacher.new(email: @registrant.email)
+		@errors = 'errors'
+
 		if params[:teen]
 			@user = Teen.new(teen_params)
 		elsif params[:teacher]
 			@user = Teacher.new(teacher_params)
 		else
-			redirect_to login_url
+			render :new
 			flash[:alert] = "You must be a Teacher or a Madrich/a!"
 		end
 		
 		@user.email = @registrant.email
 
-		if @user.save!
+		@user.save
+		if @user.errors.any?
+			render :new
+			@user = current_user
+		else
 			@registrant.destroy
 			session[:user_id] = @user._id
 			redirect_to root_url
 			flash[:notice] = "You've Logged In!"
-		else
-			render :new
 		end
 	end
 

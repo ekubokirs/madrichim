@@ -1,9 +1,14 @@
 class PasswordController < ApplicationController
-	before_action :get_user
 	after_action	:clear_expired_codes
 	before_action	:set_timezone
 
 	def edit
+		@user = User.find_by_code(params[:code])
+
+		unless @user and @user.expires_at > Time.new
+			redirect_to login_url
+			flash[:alert] = "Reset link has expired.  Please try again."
+		end
 	end
 
 	def update
@@ -19,24 +24,17 @@ class PasswordController < ApplicationController
 
 	private
 
-	def get_user
-		@user = User.find_by_code(params[:code])
-
-		unless @user and @user.expires_at > Time.new
-			redirect_to login_url
-			flash[:alert] = "Reset link has expired.  Please try again."
-		end
-	end
-
 	def clear_expired_codes
 		User.where(:expires_at.lt => Time.now)
 		.update(code: nil, expires_at: nil)
 	end
 
 	def user_params
-		params.require(:user).permit(
+		params.permit(
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :code,
+      :expires_at
     )
 	end
 end

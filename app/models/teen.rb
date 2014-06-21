@@ -20,6 +20,7 @@ class Teen < User
 	key :home_phone,	String
 	key :cell_phone,	String
 
+  validates_presence_of :born_on, :home_phone, :cell_phone
   validates_length_of :home_phone, :cell_phone, is: 10
 
   def unformat_phone_numbers

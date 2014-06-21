@@ -11,6 +11,7 @@
 	</div>
   <div id="ma_teen_reg_form">
   	<h1 class="ma_greet">Welcome <%= @registrant.email %> </h1>
+  	<%= render partial: @errors %>
   	<%= form_for :teen, url: {action: "create"} do |f| %>
 			<div class="row">
 				<p class="large-6 columns">

@@ -5,14 +5,16 @@ class User
   many  :teacher_mid_years
   many  :teacher_end_years
 
-  key :first_name,  String, :required =>  true
-  key :last_name,   String, :required =>  true
+  key :first_name,  String
+  key :last_name,   String
   key :email,       String, :unique =>    true
-  key :salt,        String, :required =>  true
-  key :fish,        String, :required =>  true
+  key :salt,        String
+  key :fish,        String
   key :code,        String
   key :expires_at,  Time
   # key :active,      Boolean
+
+  validates_presence_of :first_name, :last_name, :salt, :fish
 
   before_validation :encrypt_password
 

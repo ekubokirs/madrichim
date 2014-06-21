@@ -1,0 +1,6 @@
+<h3 class="ma_errors">You have <%= @user.errors.count %> error(s) which means this form could not be saved. Please fix the following issues:</h3>
+<ul class="ma_errorList">
+	<% @user.errors.full_messages.each do |msg| %>
+		<li class="ma_errorMessage"><%= msg %></li>
+	<% end %>
+</ul>
